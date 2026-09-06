@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="168" viewBox="0 0 240 168">
+  <rect width="240" height="168" fill="#f5f2ec"/>
+  <g fill="#fdfdfc" stroke="#b7ac9c"><rect x="20" y="53" width="36" height="22" rx="3"/><rect x="20" y="83" width="36" height="22" rx="3"/><rect x="20" y="113" width="36" height="22" rx="3"/></g>
+  <g fill="#e6ded2" stroke="#b7ac9c"><rect x="88" y="43" width="70" height="76" rx="3"/><rect x="83" y="49" width="70" height="76" rx="3"/><rect x="78" y="55" width="70" height="76" rx="3"/></g>
+  <g stroke="#91443b" fill="none" stroke-width="1.5"><path d="M58 94h18m-5-4 5 4-5 4M151 94h28m-5-4 5 4-5 4"/></g>
+  <g fill="#91443b"><rect x="184" y="86" width="8" height="30"/><rect x="197" y="65" width="8" height="51"/><rect x="210" y="96" width="8" height="20"/></g>
+  <g font-family="Arial,sans-serif" font-size="9" text-anchor="middle" fill="#655c50"><text x="38" y="38">TOKENS</text><text x="113" y="96">Transformer</text><text x="199" y="141">PREDICTION</text></g>
+</svg>

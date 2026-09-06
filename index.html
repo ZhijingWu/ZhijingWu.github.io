@@ -3,53 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Zhijing Wu</title>
-
-  <meta name="description"
-        content="Zhijing Wu — Computer Science undergraduate at Sichuan University. Research interests in Graph Machine Learning, Large Language Models, and Structured Reasoning.">
-
+  <title>Zhijing Wu | Computer Science Undergraduate</title>
+  <meta name="description" content="Zhijing Wu — Computer Science undergraduate at Sichuan University. Research interests in Graph Machine Learning, Large Language Models, and Structured Reasoning.">
+  <link rel="canonical" href="https://zhijingwu.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zhijing Wu | Computer Science Undergraduate">
+  <meta property="og:description" content="Computer Science undergraduate at Sichuan University, interested in Graph Machine Learning, Large Language Models, and Structured Reasoning.">
+  <meta property="og:url" content="https://zhijingwu.github.io/">
+  <meta property="og:site_name" content="Zhijing Wu">
   <link rel="stylesheet" href="style.css">
+  <script src="navigation.js" defer></script>
 </head>
-
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="navigation page-width" aria-label="Main navigation">
+      <a class="wordmark" href="#profile">Zhijing Wu</a>
+      <ul class="nav-items">
+        <li><a href="#research">Research Interests</a></li>
+        <li><a href="#projects">Projects / Research</a></li>
+        <li><a href="#news">News</a></li>
+        <!-- Enable this link and the section together after adding real publications. -->
+        <li hidden><a href="#publications">Publications</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <!-- Replace both CV placeholders with the actual PDF link when supplied. -->
+        <li><span class="unavailable" aria-disabled="true">CV — forthcoming</span></li>
+      </ul>
+    </nav>
+  </header>
 
-  <main class="container">
-
-    <!-- ================= HERO ================= -->
-
-    <header class="hero">
-
-      <div class="hero-main">
-
-        <h1>Zhijing Wu</h1>
-
-        <p class="subtitle">
-          Computer Science Undergraduate at Sichuan University
-        </p>
-
-        <p class="links">
-          <a href="mailto:zhijing.wu.cs@gmail.com">zhijing.wu.cs@gmail.com</a>
-          <span>·</span>
-          <a href="https://github.com/ZhijingWu" target="_blank">GitHub</a>
-          <span>·</span>
-          <a href="#" target="_blank">CV</a>
-        </p>
-
+  <div class="page-layout page-width">
+    <aside class="identity-panel" aria-label="Profile and education">
+      <div class="identity-inner">
+        <header class="profile" id="profile">
+          <img class="portrait" src="assets/profile.jpg" width="480" height="600" alt="Portrait of Zhijing Wu in front of snow-covered mountains" fetchpriority="high">
+          <h1>Zhijing Wu</h1>
+          <p class="affiliation"><a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a></p>
+          <p class="role">Computer Science Undergraduate</p>
+          <p class="research-identity">Interested in graph learning, language models, and structured reasoning.</p>
+          <ul class="contact-links" aria-label="Contact and profiles">
+            <li><a href="mailto:zhijing.wu.cs@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 6 9 7 9-7"/></svg><span>zhijing.wu.cs@gmail.com</span></a></li>
+            <li><a href="https://github.com/ZhijingWu" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="6" r="2"/><circle cx="7" cy="19" r="2"/><path d="M7 7v10m10-9v2c0 4-10 1-10 5"/></svg><span>GitHub</span></a></li>
+            <li><span class="contact-unavailable" aria-disabled="true" title="CV not yet available"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h9l5 5v13H5zM14 3v5h5M8 12h8M8 16h6"/></svg><span>CV <span class="availability-note">— forthcoming</span></span></span></li>
+            <!-- Add Scholar / LinkedIn only when real profile URLs are available. -->
+          </ul>
+        </header>
+        <section class="education" aria-labelledby="education-heading">
+          <h2 id="education-heading">Education</h2>
+          <p class="school">Sichuan University</p>
+          <p>B.Eng. in Computer Science</p>
+          <p class="education-date"><time datetime="2025-09">Sep 2025</time> – <time datetime="2030-06">Jun 2030</time></p>
+          <dl class="academic-record">
+            <div><dt>Required-course GPA</dt><dd>4.0/4.0</dd></div>
+            <div><dt>Average</dt><dd>94+</dd></div>
+            <div><dt>Rank</dt><dd>3/295</dd></div>
+          </dl>
+        </section>
       </div>
+    </aside>
 
-    </header>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section>
-
-      <h2>About</h2>
-
-      <p>
+    <main id="main" tabindex="-1">
+      <section class="content-section about" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
         I am an undergraduate student in Computer Science at
-        <a href="https://www.scu.edu.cn/" target="_blank">
+        <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">
           Sichuan University
         </a>.
       </p>
@@ -69,189 +88,118 @@
         systems for modern language models as a complementary
         systems perspective.
       </p>
+      </section>
 
-    </section>
-
-
-    <!-- ================= RESEARCH ================= -->
-
-    <section>
-
-      <h2>Research Interests</h2>
-
-      <div class="research-list">
-
-        <div class="research-item">
-          <strong>Graph Machine Learning</strong>
-          <span>Graph-structured data, representation learning, and graph-language interaction.</span>
+      <section class="content-section" id="research" aria-labelledby="research-heading">
+        <h2 id="research-heading">Research Interests</h2>
+        <div class="research-list">
+          <article class="research-card">
+            <span class="category">Graph Machine Learning</span>
+            <h3>Graph Representation Learning</h3>
+            <p>Learning effective representations for graph-structured data, with an emphasis on structure-aware and generalizable models.</p>
+            <ul class="tags" aria-label="Topics"><li>Graph Learning</li><li>Representation Learning</li><li>GNN</li></ul>
+          </article>
+          <article class="research-card">
+            <span class="category">Graph + Language</span>
+            <h3>Graph-Enhanced LLM Reasoning</h3>
+            <p>Exploring how structured graph information can support reasoning, retrieval, and reliability in large language models.</p>
+            <ul class="tags" aria-label="Topics"><li>LLM Reasoning</li><li>Knowledge Graph</li><li>Graph RAG</li></ul>
+          </article>
+          <article class="research-card">
+            <span class="category">Agentic AI</span>
+            <h3>LLM Agents &amp; Structured Reasoning</h3>
+            <p>Studying agentic systems, tool use, memory, and structured reasoning for reliable intelligent systems.</p>
+            <ul class="tags" aria-label="Topics"><li>LLM Agents</li><li>Reasoning</li><li>Tool Use</li><li>Post-training</li></ul>
+          </article>
         </div>
+        <p class="research-note">LLM Agents &amp; Post-training: agentic reasoning, tool use, memory, and post-training for structured tasks.</p>
+      </section>
 
-        <div class="research-item">
-          <strong>LLMs & Structured Reasoning</strong>
-          <span>Reasoning over structured information and relational representations.</span>
-        </div>
-
-        <div class="research-item">
-          <strong>LLM Agents & Post-training</strong>
-          <span>Agentic reasoning, tool use, memory, and post-training for structured tasks.</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section>
-
-      <h2>Selected Projects</h2>
-
-
-      <div class="project">
-
-        <div class="project-header">
-
-          <h3>
-            <a href="https://github.com/ZhijingWu/CS336"
-               target="_blank">
-              Language Modeling from Scratch
-            </a>
-          </h3>
-
-          <span class="tag">Ongoing</span>
-
-        </div>
-
-        <p class="meta">
-          Stanford CS336
-        </p>
-
-        <p>
-          Implementing core components of a modern language-model
-          training stack from scratch, including BPE tokenization,
-          Transformer modules, optimization, training, and efficient
-          computation.
-        </p>
-
-        <p class="project-note">
-          Focused on developing a deeper understanding of both
-          language-model fundamentals and systems-level efficiency.
-        </p>
-
-      </div>
-
-
-      <div class="project">
-
-        <div class="project-header">
-
-          <h3>
-            <a href="https://github.com/ZhijingWu/uav-inspection-planner"
-               target="_blank">
-              UAV Powerline Inspection Mission Planner
-            </a>
-          </h3>
-
-        </div>
-
-        <p>
+      <section class="content-section" id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected Projects / Research</h2>
+        <!-- Project dates, reports and demos are omitted until supplied.
+             Thumbnails are original conceptual diagrams, not project results. -->
+        <article class="project">
+          <figure class="project-figure"><img src="assets/uav-planning.svg" width="240" height="168" alt="Conceptual diagram of connected inspection waypoints and an alternate route" loading="lazy"><figcaption>Route planning · schematic</figcaption></figure>
+          <div class="project-body">
+            <p class="project-kind">Engineering / Project</p>
+            <h3><a href="https://github.com/ZhijingWu/uav-inspection-planner" target="_blank" rel="noopener noreferrer">UAV Powerline Inspection Mission Planner</a></h3>
+            <p>
           Developed topology-aware mission-planning and dynamic
           replanning components for UAV-based powerline inspection,
           including route optimization, mission construction, and
           integration with inspection workflows.
         </p>
+            <ul class="project-keywords" aria-label="Project topics"><li>Topology-aware planning</li><li>Route optimization</li><li>Dynamic replanning</li></ul>
+            <a class="resource-link" href="https://github.com/ZhijingWu/uav-inspection-planner" target="_blank" rel="noopener noreferrer" aria-label="GitHub: UAV Powerline Inspection Mission Planner">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project">
+          <figure class="project-figure"><img src="assets/language-modeling.svg" width="240" height="168" alt="Conceptual language-model pipeline from tokens to a Transformer and predictions" loading="lazy"><figcaption>Language modeling · schematic</figcaption></figure>
+          <div class="project-body">
+            <p class="project-kind">Course assignments <span class="project-status">Ongoing</span></p>
+            <h3><a href="https://github.com/ZhijingWu/CS336" target="_blank" rel="noopener noreferrer">Language Modeling from Scratch</a></h3>
+            <p class="meta">Stanford CS336</p>
+            <p>
+          Implementing core components of a modern language-model
+          training stack from scratch, including BPE tokenization,
+          Transformer modules, optimization, training, and efficient
+          computation.
+        </p>
+            <p class="project-note">
+          Focused on developing a deeper understanding of both
+          language-model fundamentals and systems-level efficiency.
+        </p>
+            <ul class="project-keywords" aria-label="Project topics"><li>BPE tokenization</li><li>Transformers</li><li>Training &amp; efficiency</li></ul>
+            <a class="resource-link" href="https://github.com/ZhijingWu/CS336" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Stanford CS336 assignments">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project preparation">
+          <figure class="project-figure"><img src="assets/graph-learning.svg" width="240" height="168" alt="Conceptual neighborhood aggregation around a graph node" loading="lazy"><figcaption>Graph learning · schematic</figcaption></figure>
+          <div class="project-body">
+            <p class="project-kind">Learning / research preparation</p>
+            <h3>Graph Learning / GNN Preparation</h3>
+            <p>A study plan centered on graph representation learning, graph neural networks, and graph convolutional networks.</p>
+            <ul class="project-keywords" aria-label="Study topics"><li>Graph representations</li><li>GNN</li><li>GCN</li></ul>
+            <!-- Add a repository link only when study materials are available. -->
+          </div>
+        </article>
+      </section>
 
-      </div>
+      <section class="content-section" id="news" aria-labelledby="news-heading">
+        <h2 id="news-heading">News</h2>
+        <!-- Keep only confirmed milestones. If empty, add hidden to this section
+             and to its navigation li. Unconfirmed example study dates are omitted. -->
+        <ol class="timeline">
+          <li><time datetime="2026">2026</time><p>MCM Meritorious Winner.</p></li>
+        </ol>
+      </section>
 
-    </section>
+      <!-- Reserved for actual publications. Remove hidden from this section and
+           its nav li only after adding verified bibliographic entries. -->
+      <section class="content-section" id="publications" aria-labelledby="publications-heading" hidden>
+        <h2 id="publications-heading">Publications</h2>
+      </section>
 
+      <section class="content-section" id="awards" aria-labelledby="awards-heading">
+        <h2 id="awards-heading">Awards</h2>
+        <ul class="award-list">
+          <li><span class="award-year">2026</span><div><strong>MCM</strong><span>Meritorious Winner</span></div></li>
+          <li><span class="award-year">2026</span><div><strong>Lanqiao Cup</strong><span>Sichuan Provincial Third Prize</span></div></li>
+        </ul>
+      </section>
 
-    <!-- ================= EDUCATION ================= -->
-
-    <section>
-
-      <h2>Education</h2>
-
-      <div class="education-item">
-
-        <div>
-
-          <strong>Sichuan University</strong>
-
-          <p class="meta">
-            Computer Science
-          </p>
-
-        </div>
-
-        <span class="date">
-          2025 – 2030
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= COURSEWORK ================= -->
-
-    <section>
-
-      <h2>Selected Coursework</h2>
-
-      <div class="course">
-
-        <span>
-          Stanford CS336 — Language Modeling from Scratch
-        </span>
-
-        <span class="status ongoing">
-          Ongoing
-        </span>
-
-      </div>
-
-
-      <div class="course">
-
-        <span>
-          UC Berkeley CS61C — Great Ideas in Computer Architecture
-        </span>
-
-        <span class="status completed">
-          Completed
-        </span>
-
-      </div>
-
-
-      <div class="course">
-
-        <span>
-          MIT 6.S081 — Operating System Engineering
-        </span>
-
-        <span class="status self-study">
-          Self-study
-        </span>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-      <p>
-        © 2026 Zhijing Wu
-      </p>
-
-    </footer>
-
-  </main>
-
+      <section class="content-section" id="coursework" aria-labelledby="coursework-heading">
+        <h2 id="coursework-heading">Selected Coursework</h2>
+        <p class="coursework-note">Independent study of publicly available course materials.</p>
+        <ul class="course-list">
+          <li class="course"><span>Stanford CS336 — Language Modeling from Scratch</span><span class="status ongoing">Ongoing</span></li>
+          <li class="course"><span>UC Berkeley CS61C — Great Ideas in Computer Architecture</span><span class="status">Completed</span></li>
+          <li class="course"><span>MIT 6.S081 — Operating System Engineering</span><span class="status">Self-study</span></li>
+        </ul>
+      </section>
+      <footer><p>© 2026 Zhijing Wu</p></footer>
+    </main>
+  </div>
 </body>
 </html>
