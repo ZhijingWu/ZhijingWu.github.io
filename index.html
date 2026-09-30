@@ -24,11 +24,9 @@
         <li><a href="#research">Research Interests</a></li>
         <li><a href="#projects">Projects / Research</a></li>
         <li><a href="#news">News</a></li>
-        <!-- Enable this link and the section together after adding real publications. -->
-        <li hidden><a href="#publications">Publications</a></li>
+        <li><a href="#publications">Publications</a></li>
         <li><a href="#awards">Awards</a></li>
-        <!-- Replace both CV placeholders with the actual PDF link when supplied. -->
-        <li><span class="unavailable" aria-disabled="true">CV — forthcoming</span></li>
+        <!-- Restore a CV navigation link only when a real PDF is available. -->
       </ul>
     </nav>
   </header>
@@ -56,8 +54,8 @@
           <p class="education-date"><time datetime="2025-09">Sep 2025</time> – <time datetime="2030-06">Jun 2030</time></p>
           <dl class="academic-record">
             <div><dt>Required-course GPA</dt><dd>4.0/4.0</dd></div>
-            <div><dt>Average</dt><dd>94+</dd></div>
-            <div><dt>Rank</dt><dd>3/295</dd></div>
+            <div><dt>Average</dt><dd>94.7</dd></div>
+            <div><dt>Rank</dt><dd>2/288</dd></div>
           </dl>
         </section>
       </div>
@@ -137,14 +135,12 @@
         <article class="project">
           <figure class="project-figure"><img src="assets/language-modeling.svg" width="240" height="168" alt="Conceptual language-model pipeline from tokens to a Transformer and predictions" loading="lazy"><figcaption>Language modeling · schematic</figcaption></figure>
           <div class="project-body">
-            <p class="project-kind">Course assignments <span class="project-status">Ongoing</span></p>
+            <p class="project-kind">Independent coursework <span class="project-status">Completed</span></p>
             <h3><a href="https://github.com/ZhijingWu/CS336" target="_blank" rel="noopener noreferrer">Language Modeling from Scratch</a></h3>
-            <p class="meta">Stanford CS336</p>
+            <p class="meta">Stanford CS336 (2026) · Independent study of publicly available course materials.</p>
             <p>
-          Implementing core components of a modern language-model
-          training stack from scratch, including BPE tokenization,
-          Transformer modules, optimization, training, and efficient
-          computation.
+          Completed all five assignments through independent implementation,
+          covering language-model fundamentals, systems, scaling, data, and alignment.
         </p>
             <p class="project-note">
           Focused on developing a deeper understanding of both
@@ -154,16 +150,6 @@
             <a class="resource-link" href="https://github.com/ZhijingWu/CS336" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Stanford CS336 assignments">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
-        <article class="project preparation">
-          <figure class="project-figure"><img src="assets/graph-learning.svg" width="240" height="168" alt="Conceptual neighborhood aggregation around a graph node" loading="lazy"><figcaption>Graph learning · schematic</figcaption></figure>
-          <div class="project-body">
-            <p class="project-kind">Learning / research preparation</p>
-            <h3>Graph Learning / GNN Preparation</h3>
-            <p>A study plan centered on graph representation learning, graph neural networks, and graph convolutional networks.</p>
-            <ul class="project-keywords" aria-label="Study topics"><li>Graph representations</li><li>GNN</li><li>GCN</li></ul>
-            <!-- Add a repository link only when study materials are available. -->
-          </div>
-        </article>
       </section>
 
       <section class="content-section" id="news" aria-labelledby="news-heading">
@@ -171,14 +157,22 @@
         <!-- Keep only confirmed milestones. If empty, add hidden to this section
              and to its navigation li. Unconfirmed example study dates are omitted. -->
         <ol class="timeline">
+          <li><time datetime="2026-09">Sep 2026</time><p>A regular paper was accepted to IEEE BIBM 2026.</p></li>
+          <li><time datetime="2026-09">Sep 2026</time><p>Completed Stanford CS336: Language Modeling from Scratch, including Assignments 1–5.</p></li>
           <li><time datetime="2026">2026</time><p>MCM Meritorious Winner.</p></li>
         </ol>
       </section>
 
-      <!-- Reserved for actual publications. Remove hidden from this section and
-           its nav li only after adding verified bibliographic entries. -->
-      <section class="content-section" id="publications" aria-labelledby="publications-heading" hidden>
+      <section class="content-section" id="publications" aria-labelledby="publications-heading">
         <h2 id="publications-heading">Publications</h2>
+        <article class="publication" aria-labelledby="bibm-2026-title">
+          <h3 id="bibm-2026-title">Hyperbolic Self-Supervised Pretraining for Hierarchical EEG Representation Learning in Generalizable Parkinson’s Disease Detection</h3>
+          <p class="publication-authors">Jinghong Tang, <strong>Zhijing Wu</strong>, Yikun Liu, Wei Ju, Jiyao Wang</p>
+          <p class="publication-venue"><cite>2026 IEEE International Conference on Bioinformatics and Biomedicine (IEEE BIBM 2026)</cite></p>
+          <p class="publication-status">Regular Paper, Accepted</p>
+          <!-- Add a publication-links paragraph with Paper / IEEE Xplore / BibTeX anchors
+               here only when their real public URLs or files are available. -->
+        </article>
       </section>
 
       <section class="content-section" id="awards" aria-labelledby="awards-heading">
@@ -193,7 +187,7 @@
         <h2 id="coursework-heading">Selected Coursework</h2>
         <p class="coursework-note">Independent study of publicly available course materials.</p>
         <ul class="course-list">
-          <li class="course"><span>Stanford CS336 — Language Modeling from Scratch</span><span class="status ongoing">Ongoing</span></li>
+          <li class="course"><span>Stanford CS336 — Language Modeling from Scratch</span><span class="status">Completed</span></li>
           <li class="course"><span>UC Berkeley CS61C — Great Ideas in Computer Architecture</span><span class="status">Completed</span></li>
           <li class="course"><span>MIT 6.S081 — Operating System Engineering</span><span class="status">Self-study</span></li>
         </ul>

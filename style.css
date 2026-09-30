@@ -101,6 +101,11 @@ main { min-width: 0; }
 .timeline li + li { margin-top: 12px; }
 .timeline time, .award-year { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .timeline p { margin: 0; }
+.publication h3 { margin-bottom: 10px; }
+.publication p { margin-bottom: 6px; }
+.publication-venue, .publication-status { color: var(--muted); }
+.publication-status { font-size: 14px; }
+.publication p:last-of-type { margin-bottom: 0; }
 .award-list li { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 18px; }
 .award-list li + li { margin-top: 15px; }
 .award-list strong { display: block; }

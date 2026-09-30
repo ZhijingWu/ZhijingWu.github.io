@@ -6,33 +6,36 @@ and `assets/` beside it. GitHub Pages can serve these files from the repository 
 
 ## Files
 
-- `index.html`: profile, education, interests, projects, news, awards, coursework.
+- `index.html`: profile, education, interests, projects, news, publications, awards, coursework.
 - `style.css`: shared palette, typography, desktop/sidebar layout, responsive and print rules.
 - `navigation.js`: optional active-section indicator and anchor clearance; anchors work without JavaScript.
 - `assets/profile.jpg`: 480 × 600 portrait, cropped from the supplied photo without retouching.
 - `assets/favicon.svg`: lightweight ZW monogram favicon.
-- `assets/uav-planning.svg`, `language-modeling.svg`, `graph-learning.svg`: original
+- `assets/uav-planning.svg`, `language-modeling.svg`: original
   conceptual diagrams; they are not screenshots, experimental results, or project evidence.
+- `assets/graph-learning.svg`: retained unused asset; no preparation project is displayed.
 
 ## Updating content
 
 - The portrait uses a 4:5 crop to remove the upper sign and keep the head, shoulders
   and mountain background. It is resized and JPEG-compressed, without face editing.
   Keep explicit image dimensions when replacing it to avoid layout shifts.
-- Once a real CV is available, replace both disabled CV spans with anchors to that
-  file. No CV PDF is included. Scholar and LinkedIn are intentionally omitted until
+- Once a real CV is available, replace the sidebar placeholder with a link and restore
+  a top-navigation link. No CV PDF is included. Scholar and LinkedIn are omitted until
   real profile URLs are supplied.
 - Education dates, required-course GPA (not overall GPA), average, rank, and the two
   awards follow the information supplied for this revision.
-- Original About paragraphs, existing project descriptions and coursework statuses
-  are retained. The three expanded interest cards use the newly supplied descriptions.
-- Graph Learning / GNN Preparation is presented as a study plan, not a paper or
-  completed research result. Add dates, a repository, or outcomes only when available.
-- News contains the supplied MCM milestone. The example GNN completion and research
-  preparation dates were not treated as confirmed events.
+- About and research interests retain the established positioning. CS336 is completed
+  independent coursework, including Assignments 1–5; its overview repository is retained.
+- Selected Projects contains only the UAV planner and completed CS336 coursework.
+  Graph/LLM/agent interests remain in Research Interests; preparation plans and
+  upcoming unpublished work are not presented as project achievements.
+- News includes the supplied MCM milestone, September 2026 BIBM regular-paper
+  acceptance, and CS336 completion. Unconfirmed project plans remain omitted.
 - To hide News when empty, add `hidden` to both its section and its navigation `li`.
-- Publications and its navigation entry already use `hidden`. Add actual entries
-  before removing the attribute from both. Do not show empty sections.
+- Publications and its navigation entry are visible with the supplied accepted
+  IEEE BIBM 2026 citation. Add Paper / IEEE Xplore / BibTeX links only after real public
+  URLs or files are supplied; the article includes an insertion-point comment.
 - Project dates, Demo and Report links are omitted until supplied. Keep the existing
   GitHub destinations when updating project presentation.
 
