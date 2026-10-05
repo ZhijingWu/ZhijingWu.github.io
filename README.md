@@ -1,43 +1,41 @@
 # Zhijing Wu — academic homepage
 
-Static HTML/CSS for GitHub Pages. No package installation, remote fonts,
-or build step is needed. Open `index.html` directly in a browser; keep `style.css`
-and `assets/` beside it. GitHub Pages can serve these files from the repository root.
+Static HTML/CSS for GitHub Pages, with no build step, external fonts, or framework.
+Open `index.html` directly or serve the repository root with a local HTTP server.
 
-## Files
+## Content and hierarchy
 
-- `index.html`: profile, education, interests, projects, news, publications, awards.
-- `style.css`: shared palette, typography, desktop/sidebar layout, responsive and print rules.
-- `navigation.js`: optional active-section indicator and anchor clearance; anchors work without JavaScript.
-- `assets/profile.jpg`: 480 × 600 portrait, cropped from the supplied photo without retouching.
-- `assets/favicon.svg`: lightweight ZW monogram favicon.
-- `assets/uav-planning.svg`, `language-modeling.svg`, `graph-learning.svg`: original
-  conceptual diagrams; they are not screenshots, experimental results, or project evidence.
-- `assets/Zhijing_Wu_CV.pdf`: supplied CV updated October 4, 2026.
+The profile centers on LLM agents, multi-agent communication and evaluation,
+graph-structured reasoning, and ML systems. The page contains About, Research
+Interests, Selected Projects / Research, Publications, Technical Skills, News,
+and Awards. Navigation also links to the CV. No availability line is displayed
+on the homepage.
 
-## Updating content
+Selected projects, in order:
+1. Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment — independent ProtocolBench diagnostic.
+2. Execution-Semantics Audit of Guided Topology Diffusion — reproduction study.
+3. Within-Step Corruption Timing for Computer-Use Agents — independent AgentHijack extension.
+4. Language Modeling Systems from Scratch — Stanford CS336 independent study.
 
-- The portrait uses a 4:5 crop to remove the upper sign and keep the head, shoulders
-  and mountain background. It is resized and JPEG-compressed, without face editing.
-  Keep explicit image dimensions when replacing it to avoid layout shifts.
-- The sidebar links to the supplied CV. Scholar and LinkedIn remain omitted until real URLs are supplied.
-- Education dates, required-course GPA (not overall GPA), average, rank, and the two
-  awards follow the information supplied for this revision.
-- The research identity centers on LLM agents, planning, memory, reliability, and
-  structured reasoning. Graph ML is a methodological foundation; systems and
-  post-training are supporting tools.
-- Projects are ordered: CS336 independent coursework, Graph Machine Learning
-  independent study, and the UAV planner. There is no separate coursework section.
-- AgentHijack timing work and GTD reproduction appear only as brief independent-study
-  News items, without project cards, report links, or collaboration claims.
-- News retains the BIBM, CS336, and MCM milestones after the two October 2026 entries.
-- To hide News when empty, add `hidden` to both its section and its navigation `li`.
-- Publications and its navigation entry are visible with the supplied accepted
-  IEEE BIBM 2026 citation. Add Paper / IEEE Xplore / BibTeX links only after real public
-  URLs or files are supplied; the article includes an insertion-point comment.
-- Project dates, Demo and Report links are omitted until supplied. Keep the existing
-  GitHub destinations when updating project presentation.
+All four selected projects have public GitHub resource links. The ProtocolBench
+artifact is https://github.com/ZhijingWu/protocolbench-communication-cost-diagnostic.
+Independent work
+is not presented as paper authorship or formal collaboration. The BIBM citation
+remains Regular Paper, Accepted, without invented paper links. MCM (May 2026, Meritorious Winner) is the only award.
 
-The design independently interprets academic homepage principles: narrow identity
-column, broad content area, restrained warm neutrals, serif headings, light research
-cards and compact lists. No reference-site text, imagery or code is included.
+## Files and CV status
+
+- `index.html`: content, navigation, metadata, and semantic sections.
+- `style.css`: existing warm palette and responsive layout; small additions for
+  text-first project entries and the compact skills list.
+- `navigation.js`: optional active-section and anchor-clearance enhancement.
+- `assets/profile.jpg` and `assets/favicon.svg`: unchanged portrait and favicon.
+- Existing graph, UAV, and language-model SVGs are retained as unused assets;
+  they are conceptual illustrations, not empirical evidence.
+- `assets/Zhijing_Wu_CV.pdf`: final CV supplied and replaced by the user.
+  Both sidebar and navigation CV links use this generic filename. The PDF is
+  preserved unchanged in this update.
+
+Education remains Sichuan University, B.Eng. in Computer Science, Sep 2025–Jun 2030;
+required-course GPA 4.0/4.0, average 94.7, rank 2/288. No separate coursework section
+or primary Graph ML / UAV project is displayed.
