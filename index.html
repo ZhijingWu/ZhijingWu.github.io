@@ -97,8 +97,9 @@
             <h3>Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment</h3>
             <p class="meta">Independent Study on ProtocolBench</p>
             <p>I audited the released ProtocolBench / AgentProtocols GAIA routing path to ask whether workflow communication demand and measured runtime costs can change a fixed local protocol assignment.</p>
-            <p>I profiled A2A, ACP, ANP, and Agora over real local request paths with 1–100 KB payloads; 480/480 measured requests succeeded. Under controlled communication demand and official workflow configuration templates, I found an A2A → ANP assignment reversal. The eligible reversal persisted in a no-Agora ablation after separating forced candidate-set changes.</p>
-            <p class="project-note">This diagnostic examines assignment sensitivity; it does not establish GAIA or ProtocolRouter improvement or general protocol superiority.</p>
+            <p>I profiled A2A, ACP, ANP, and Agora over real local request paths with 1–100 KiB payloads; 480/480 measured requests succeeded. Under controlled communication demand, synthetic local preference margins, and released workflow configuration templates, I found an A2A → ANP assignment reversal in the declared sensitivity objective. The eligible reversal persisted in a no-Agora ablation after separating forced candidate-set changes.</p>
+            <p>In a separate workflow-latency calibration, I measured 120 no-op workflows (an additional 480 RPCs) with serial and fork/join execution. The within-session serial treatment-minus-baseline latency was predicted as −0.156 ms but observed as +0.828 ms; parallel comparisons were sensitive to execution order.</p>
+            <p class="project-note">Assignment sensitivity and workflow calibration are distinct results; neither establishes GAIA task-quality gains or general protocol superiority. The linked public artifact documents the assignment diagnostic.</p>
             <a class="resource-link" href="https://github.com/ZhijingWu/protocolbench-communication-cost-diagnostic" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
@@ -108,7 +109,7 @@
             <h3>Execution-Semantics Audit of Guided Topology Diffusion</h3>
             <p class="meta">Multi-Agent Systems Reproduction Study</p>
             <p>I reproduced the released GTD pipeline on GSM8K and traced generated communication graphs through diffusion supervision, runtime construction, execution, and final aggregation.</p>
-            <p>Across 603 records, raw-to-executed edge Jaccard was 0.152. A controlled canonical-coordinate adapter increased it to 0.863.</p>
+            <p>Across 603 records, mean raw-to-executed edge Jaccard was 0.152. A controlled canonical-coordinate adapter increased it to 0.863. Downstream task-performance gains were not established.</p>
             <a class="resource-link" href="https://github.com/ZhijingWu/diffusion_agent/tree/reproduction" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Execution-Semantics Audit of Guided Topology Diffusion">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
@@ -118,9 +119,20 @@
             <h3>Within-Step Corruption Timing for Computer-Use Agents</h3>
             <p class="meta">Independent Extension of AgentHijack</p>
             <p>I studied pre-observation, post-observation/pre-execution, and post-execution corruption timing across 3 Chrome tasks and 36 primary runs.</p>
-            <p>Post-observation/pre-execution corruption increased mean episode length relative to pre-observation on all 3/3 retained tasks: +4.00, +1.75, and +1.00 steps. One task also showed lower success under stale timing.</p>
-            <p class="project-note">A descriptive controlled study with a small task set.</p>
+            <p>Post-observation/pre-execution corruption increased mean episode length relative to pre-observation on all 3/3 retained tasks: +4.00, +1.75, and +1.00 steps. Profile-rename success was 2/4 under stale timing versus 4/4 under pre-observation corruption.</p>
+            <p class="project-note">A descriptive comparison with a small task set and uncontrolled sampling seeds. Episode-length summaries include failed/capped episodes and do not isolate recovery work or establish explicit specification violations.</p>
             <a class="resource-link" href="https://github.com/ZhijingWu/AgentHijack/tree/exp/within-step-timing" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Within-Step Corruption Timing for Computer-Use Agents">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project project-text">
+          <div class="project-body">
+            <p class="project-kind">Independent Follow-up / Memory Audit</p>
+            <h3>Trust-Metadata Inheritance in Continually Updated LLM Memory</h3>
+            <p class="meta">Mechanism-Level Audit of ExpeL</p>
+            <p>I audited ExpeL as a follow-up to Memory-Collapse-Eval. In a deterministic shared-state EDIT replay, resetting inherited support moved the edited rule from rank 2 to rank 15 while preserving all 36 rule texts.</p>
+            <p>A controlled 50-task paired WebShop evaluation yielded 0/50 successes with inherited counts versus 1/50 with reset counts. This does not establish a reliable downstream benefit or equivalence between the policies.</p>
+            <p class="project-note">One selected replay state and one rollout per memory/task limit generalization. Of 100 episodes, 96 reached the 10-round cap; trajectory observability also limited interpretation. Support counts are heuristics, not calibrated confidence.</p>
+            <a class="resource-link" href="https://github.com/ZhijingWu/memory-collapse-trust-metadata-audit" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Trust-Metadata Inheritance in Continually Updated LLM Memory">GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article class="project project-text">
@@ -172,6 +184,7 @@
       <section class="content-section" id="awards" aria-labelledby="awards-heading">
         <h2 id="awards-heading">Awards</h2>
         <ul class="award-list">
+          <li><span class="award-year">2026</span><div><strong>National College Student Mathematics Competition</strong><span>First Prize (Sichuan Division)</span></div></li>
           <li><span class="award-year">May 2026</span><div><strong>MCM</strong><span>Meritorious Winner</span></div></li>
         </ul>
       </section>
