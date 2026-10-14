@@ -18,7 +18,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 ::selection { color: var(--ink); background: #eaddd2; }
 p { margin: 0 0 13px; }
 strong { font-weight: 600; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; text-wrap: balance; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; text-wrap: balance; }
 h1 { margin: 20px 0 6px; font-size: 34px; line-height: 1.2; letter-spacing: -.025em; }
 h2 { margin: 0 0 23px; font-size: 27px; line-height: 1.25; letter-spacing: -.02em; }
 h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.3; letter-spacing: -.015em; }
@@ -84,11 +84,13 @@ main { min-width: 0; }
 .project-index { display: flex; flex-wrap: wrap; gap: 6px 22px; padding-bottom: 18px; font-size: 13px; }
 .project-index a { padding-block: 4px; text-decoration-color: var(--line-strong); }
 .project { display: block; }
+.project-group + .project-group { margin-top: 34px; }
+.project-group-heading { margin: 0 0 22px; padding-top: 16px; border-top: 1px solid var(--line-strong); color: var(--accent); font: 600 13px/1.5 var(--sans); letter-spacing: .035em; text-wrap: balance; }
+.project-group:first-of-type > .project-group-heading { border-top: 2px solid var(--accent); }
+.project-method { margin-bottom: 12px; font-size: 15px; color: var(--muted); }
+.project-resources { display: flex; flex-wrap: wrap; gap: 4px 22px; }
 .project + .project { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 26px; }
-.project-featured { border-top: 2px solid var(--accent); padding-top: 20px; }
-.featured-label { color: var(--accent); text-transform: uppercase; font-size: 11px; font-weight: 600; letter-spacing: .11em; margin-bottom: 10px; }
-.project h3 { font-size: 25px; line-height: 1.28; margin-bottom: 8px; text-wrap: pretty; }
-.project-featured h3 { font-size: 30px; max-width: 690px; }
+.project h4 { font-size: 25px; line-height: 1.28; margin: 0 0 8px; letter-spacing: -.015em; text-wrap: pretty; }
 .project-kind { color: var(--muted); font-size: 11px; letter-spacing: .07em; margin-bottom: 12px; text-transform: uppercase; }
 .project-question { margin-bottom: 12px; }
 .evidence-list { margin: 0 0 12px; padding-left: 20px; font-size: 15px; }
@@ -182,8 +184,7 @@ footer p { margin: 0; }
   .research-card h3 { font-size: 23px; }
   .research-card p { font-size: 16px; }
   .about-lead { font-size: 23px; }
-  .project h3 { font-size: 25px; }
-  .project-featured h3 { font-size: 28px; }
+  .project h4 { font-size: 25px; }
   .project-index { gap: 4px 20px; }
   .detail-body { padding: 16px; }
   .stage-evidence > div { grid-template-columns: 1fr; gap: 3px; }
@@ -212,5 +213,5 @@ footer p { margin: 0; }
   .research-card { margin-bottom: 10px; }
   .research-card, .course, .award-list li { break-inside: avoid; }
   a { color: inherit; }
-  h2, h3 { break-after: avoid; }
+  h2, h3, h4 { break-after: avoid; }
 }

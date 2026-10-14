@@ -16,20 +16,55 @@ The page contains About, Research Interests, Selected Projects / Research,
 Publications, Technical Skills, News and Awards. Navigation also links to the
 existing generic CV. No availability line is displayed.
 
-Selected projects, in order:
+## Research organization
 
-1. Execution-Reliability Diagnostics of Language Agent Tree Search — independent LATS/WebShop audit.
-2. Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment — independent ProtocolBench diagnostic.
-3. Execution-Semantics Audit of Guided Topology Diffusion — reproduction study.
-4. Within-Step Corruption Timing for Computer-Use Agents — independent AgentHijack extension.
-5. Trust-Metadata Inheritance in Continually Updated LLM Memory — independent ExpeL follow-up.
-6. Language Modeling Systems from Scratch — Stanford CS336 independent study.
+Featured Research:
 
-All six entries have public GitHub resource links. Projects use open, separated
-entries with a question, key evidence, visible scope, and native HTML disclosures
-for full descriptions. All original scientific project paragraphs remain in the
-disclosures, which work without JavaScript. The existing five projects retain
-their relative order and resource URLs.
+1. Execution-Semantics Audit of Guided Topology Diffusion.
+2. Sampling Efficiency and Geometric Sensitivity in Cardiff.
+3. Execution and Scoring Semantics in the Public AutumnBench Release.
+4. Within-Step Corruption Timing for Computer-Use Agents (AgentHijack).
+
+Additional Independent Research:
+
+1. Execution-Reliability Diagnostics of Language Agent Tree Search (LATS).
+2. Trust-Metadata Inheritance in Continually Updated LLM Memory (ExpeL).
+3. Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment (ProtocolBench).
+
+Foundations / Coursework:
+
+1. Language Modeling Systems from Scratch — Stanford CS336 independent study.
+
+All original research descriptions, limitations, project anchors and repository
+URLs are retained. Group headings and a small group index replace the flat list;
+each project remains visible with evidence and scope, with native disclosures for
+the full description. No JavaScript is required to access the research content.
+The top navigation and warm 2×2 Research Interests cards are unchanged.
+
+## Cardiff and AutumnBench
+
+Cardiff's public evidence is at
+https://github.com/ZhijingWu/cardiff-sampling-geometry-audit.
+The entry links to its two-page Technical Note. It describes an inference-only
+Porto study using released diffusion checkpoints: 64 conditions × 3 seeds, fixed
+first-stage latents, GPS intervals 20/50, median paired-batch GPS-stage speedup
+2.503× (conditional 95% bootstrap interval 2.432–2.692×). Core geometric point
+estimates met prespecified margins, while turning tails and individual paths
+changed. Road validity and full benchmark reproduction were not established.
+No new algorithm or end-to-end acceleration is claimed.
+
+AutumnBench links to the unchanged applicant-supplied two-page note at
+`assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf`. The bounded audit records
+117/117 visible MFP frame matches, official positive/negative scoring checks,
+and a released planning witness reaching +1. A source-grounded discrepancy
+between historical selection and submission-time scoring is distinguished from
+runtime observations. The final CD numerical reward was not retained. Faithful
+official reproduction requires author clarification; the entry does not claim
+invalid published results, learned-world-model experiments or a validated repair.
+No public AutumnBench audit repository is claimed or invented.
+
+Two October 2026 News items distinguish Cardiff's public artifact release from
+completion of the bounded AutumnBench audit. Existing News entries remain.
 
 ## LATS evidence and scope
 
@@ -55,17 +90,19 @@ were run as part of the homepage update.
 
 - `index.html`: content, metadata, navigation, semantic sections, and native disclosures.
 - `style.css`: existing warm palette and two-column architecture, refined serif
-  heading hierarchy, an open 2×2 interest layout, project index, restrained featured
-  entry, subtle separators, visible keyboard focus, and mobile stacking.
+  heading hierarchy, warm 2×2 interest cards, research-group headings/index,
+  subtle separators, visible keyboard focus, and mobile stacking.
 - `navigation.js`: unchanged optional active-section and anchor-clearance enhancement.
 - `assets/profile.jpg` and `assets/favicon.svg`: unchanged portrait and favicon.
 - Existing graph, UAV, and language-model SVGs remain unused assets; they are
   conceptual illustrations, not empirical evidence.
 - `assets/Zhijing_Wu_CV.pdf`: unchanged generic CV supplied by the user; both CV
   links retain this filename.
-- `homepage_redesign_review.md`: local review scope, factual checks and visual QA.
+- `assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf`: unchanged two-page note.
+- `homepage_update_review.md`: before/after scope, factual checks and visual QA.
 
-No new assets, dependencies, fonts or build tooling were introduced. Reduced
+The AutumnBench note is the only added asset. No dependencies, fonts or build
+tooling were introduced. Reduced
 motion is respected. Interest areas are questions, independent project evidence
 is distinguished from coursework, and publications retain their original status.
 
@@ -74,10 +111,14 @@ is distinguished from coursework, and publications retain their original status.
 The user confirmed `zhijingwu.cs@gmail.com` on 12 October 2026. Both visible email
 and mailto now use this address, matching the current generic CV.
 
-The generic CV at baseline commit `a83f7fa` already includes ExpeL and the 2026
-mathematics award; the earlier README warning about their absence was stale.
-It does not yet include LATS. A separate general academic CV update is recommended;
-no professor-specific CV was substituted and no PDF was changed here.
+The hosted generic CV at baseline commit `c9a6d7b` matches the repository PDF.
+It includes LATS, GTD, ExpeL, AgentHijack, ProtocolBench and the 2026 mathematics
+award. Its education, accepted BIBM paper and awards are consistent with the
+homepage, and its project summaries preserve the same findings and limitations.
+It does not include Cardiff or AutumnBench; CS336 is also omitted from its
+selected-project list. These are coverage omissions, not conflicting results.
+The applicant will supply a finalized general CV separately. This task preserves
+the PDF bytes and the existing `assets/Zhijing_Wu_CV.pdf` links.
 
 Education remains Sichuan University, B.Eng. in Computer Science, Sep 2025–Jun 2030;
 required-course GPA 4.0/4.0, average 94.7, rank 2/288. Awards retain MCM (May 2026,
@@ -91,5 +132,5 @@ GTD reports graph fidelity, not established task-performance gains. AgentHijack
 retains failure/cap and sampling limitations. ExpeL retains its unresolved downstream
 finding. CS336 remains independent study of publicly available course materials.
 
-This revision is prepared on `codex/lats-homepage-refinement` for local review.
+This revision is prepared on `codex/cardiff-autumnbench-update` for local review.
 Publishing requires the user's approval; this task does not commit, push or deploy.

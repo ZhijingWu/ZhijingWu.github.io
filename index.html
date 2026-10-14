@@ -96,151 +96,205 @@
 
       <section class="content-section" id="projects" aria-labelledby="projects-heading">
         <h2 id="projects-heading">Selected Projects / Research</h2>
-        <p class="section-intro">Independent audits and controlled studies, followed by coursework. Expand each entry for its full scientific description.</p>
-        <nav class="project-index" aria-label="Project index">
-          <a href="#project-lats">LATS</a>
-          <a href="#project-protocolbench">ProtocolBench</a>
-          <a href="#project-gtd">GTD</a>
-          <a href="#project-agenthijack">AgentHijack</a>
-          <a href="#project-expel">ExpeL</a>
-          <a href="#project-cs336">CS336</a>
+        <p class="section-intro">Independent audits and controlled studies, organized by research focus and coursework. Expand each entry for its full scientific description.</p>
+        <nav class="project-index" aria-label="Research groups">
+          <a href="#featured-research">Featured Research</a>
+          <a href="#additional-research">Additional Research</a>
+          <a href="#foundations">Foundations / Coursework</a>
         </nav>
-        <article class="project project-featured" id="project-lats" aria-labelledby="lats-title">
-          <p class="featured-label">Featured audit · October 2026</p>
-          <header class="project-header">
-            <h3 id="lats-title">Execution-Reliability Diagnostics of Language Agent Tree Search</h3>
-            <p class="project-kind">Independent Research Audit / Language Agents</p>
-          </header>
-          <p class="project-question">Investigated action-output contracts and evaluator-score extraction in a pinned LATS/WebShop implementation using a bounded real-model execution trace, controlled frozen-prompt comparisons, and offline parser verification.</p>
-          <ul class="evidence-list">
-            <li><strong>Action interface:</strong> 35/45 generated actions were invalid in the recorded baseline prefix. A format instruction changed syntax compliance from 0/15 to 15/15 completions; all were <code>think[...]</code>, with no navigation demonstrated.</li>
-            <li><strong>Score interface:</strong> complete final scores changed from 0/6 at 100 tokens to 6/6 at 300 tokens. The native parser agreed with only 3/6; the digit 5 in <code>$50</code> explained all three mismatches.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> One baseline task and selected frozen prompts. No benchmark-wide prevalence estimate, demonstrated task-success improvement, or real mixed-frontier child/value alignment exposure.</p>
-          <details class="study-details">
-            <summary>Study design, B1–B4 evidence &amp; limitations</summary>
-            <div class="detail-body">
-              <dl class="stage-evidence">
-                <div><dt>B1</dt><dd>In one bounded real-model baseline prefix, 35/45 generated actions were invalid, and 32/32 evaluator outputs lacked complete final scores at the 100-token cap. No successful purchase occurred. A request ceiling interrupted the first rollout before a completed backup.</dd></div>
-                <div><dt>B2</dt><dd>A command-format instruction changed syntax compliance from 0/15 to 15/15 completions. Each condition used 3 requests with 5 completions per request; the completions are clustered within requests. All 15 compliant outputs were <code>think[...]</code> commands. No navigation or environment episode was demonstrated.</dd></div>
-                <div><dt>B3</dt><dd>Across three frozen evaluator prompts and two repetitions per prompt/cap, complete final scores changed from 0/6 at 100 tokens to 6/6 at 300 tokens. These were fresh samples, not continuations. The native parser agreed with 3/6 complete scores; all three mismatches came from the digit 5 in <code>$50</code>. No search or environment episode was run in this comparison.</dd></div>
-                <div><dt>B4</dt><dd>81/81 private CPU checks passed: 64 synthetic cases, 12 recorded-response comparisons and 5 synthesis/boundary checks. The public repository provides only the <strong>64 synthetic parser tests</strong>, not the full private real-response suite. Public raw real-model responses are withheld.</dd></div>
-              </dl>
-              <p>The public synthetic tests demonstrate source-level parser behavior; they do not independently reproduce the original real-model observations. Score-extraction agreement does not validate shopping judgments. Neither a new LATS algorithm nor an evaluated search-performance fix is claimed.</p>
-              <p>This independent audit is not affiliated with or endorsed by the LATS or WebShop authors. Its small selected sample and withheld raw responses limit generalization and public verification.</p>
+        <section class="project-group" id="featured-research" aria-labelledby="featured-research-heading">
+          <h3 class="project-group-heading" id="featured-research-heading">Featured Research</h3>
+          <article class="project" id="project-gtd" aria-labelledby="gtd-title">
+            <header class="project-header">
+              <h4 id="gtd-title">Execution-Semantics Audit of Guided Topology Diffusion</h4>
+              <p class="project-kind">Reproduction / Execution-Semantics Audit</p>
+            </header>
+            <p class="project-question">Do generated communication graphs retain their meaning when constructed and executed by the runtime?</p>
+            <ul class="evidence-list">
+              <li><strong>603 records.</strong> Mean raw-to-executed edge Jaccard increased from 0.152 to 0.863 with a controlled coordinate adapter.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> Improved graph fidelity did not establish downstream task-performance gains.</p>
+            <details class="study-details">
+              <summary>Full study description <span class="visually-hidden">— GTD</span></summary>
+              <div class="detail-body">
+                <p class="meta">Multi-Agent Systems Reproduction Study</p>
+                <p>I reproduced the released GTD pipeline on GSM8K and traced generated communication graphs through diffusion supervision, runtime construction, execution, and final aggregation.</p>
+                <p>Across 603 records, mean raw-to-executed edge Jaccard was 0.152. A controlled canonical-coordinate adapter increased it to 0.863. Downstream task-performance gains were not established.</p>
+              </div>
+            </details>
+            <a aria-label="GitHub: Execution-Semantics Audit of Guided Topology Diffusion" class="resource-link" href="https://github.com/ZhijingWu/diffusion_agent/tree/reproduction" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project" id="project-cardiff" aria-labelledby="cardiff-title">
+            <header class="project-header">
+              <h4 id="cardiff-title">Sampling Efficiency and Geometric Sensitivity in Cardiff</h4>
+              <p class="project-kind">Independent Inference Study / Diffusion Models</p>
+            </header>
+            <p class="project-question">How does faster GPS sampling affect execution cost and trajectory geometry when first-stage conditions are fixed?</p>
+            <p class="project-method">Using released Porto diffusion checkpoints, I compared GPS sampling intervals 20 and 50 across 64 conditions × 3 seeds, holding first-stage latents fixed within each seed.</p>
+            <ul class="evidence-list">
+              <li><strong>2.503× median paired-batch GPS-stage speedup</strong> across 24 batch pairs; conditional 95% bootstrap interval: 2.432–2.692×.</li>
+              <li><strong>Core geometry:</strong> median length and pooled p95 step-distance point estimates met prespecified ±10% margins. Turning-angle tails and individual paths changed.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> Independent, inference-only Porto study. Road validity and a full Cardiff benchmark reproduction were not established; no new diffusion algorithm is claimed.</p>
+            <details class="study-details">
+              <summary>Protocol, uncertainty &amp; limitations <span class="visually-hidden">— Cardiff</span></summary>
+              <div class="detail-body">
+                <p>The first 64 valid attribute rows were evaluated with seeds 0, 1 and 2, yielding 192 trajectories per interval. Stage 1 latents were generated once per seed and reused in both GPS arms. Eight-row batches alternated timing order and restored the same pre-call RNG state per pair; synchronized GPS timings excluded setup, writing and Stage 1.</p>
+                <p>The speedup is the median of 24 paired-batch ratios, not an end-to-end acceleration estimate. Bootstrap intervals are conditional on the ordered subset and RNG coupling. Passing the frozen point-estimate margins does not establish population geometric equivalence.</p>
+                <p>The original stochastic sampler was retained. Shared draws entered different timesteps and coefficients, so schedule and noise-assignment effects were not separated. Turning-tail sensitivity was exploratory; smaller angles were not established as better.</p>
+                <p>No road graph, decoded routes, checkpoint-matched held-out reference or privacy evaluation was tested. The public aggregate package supports summary replay, not independent rederivation of withheld trajectory statistics or fresh model execution. This study is independent of the original Cardiff authors.</p>
+              </div>
+            </details>
+            <div class="project-resources">
+              <a class="resource-link" href="https://github.com/ZhijingWu/cardiff-sampling-geometry-audit" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Cardiff sampling and geometry audit">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="resource-link" href="https://raw.githubusercontent.com/ZhijingWu/cardiff-sampling-geometry-audit/main/Zhijing_Wu_Cardiff_Technical_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="Cardiff Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
             </div>
-          </details>
-          <a class="resource-link" href="https://github.com/ZhijingWu/LATS-Execution-Reliability-Audit" target="_blank" rel="noopener noreferrer">Code &amp; Reproducibility <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project" id="project-protocolbench" aria-labelledby="protocolbench-title">
-          <header class="project-header">
-            <h3 id="protocolbench-title">Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment</h3>
-            <p class="project-kind">Diagnostic / Sensitivity Study</p>
-          </header>
-          <p class="project-question">Can measured local communication costs change a fixed protocol assignment—and predict workflow latency?</p>
-          <ul class="evidence-list">
-            <li><strong>480/480 requests succeeded.</strong> An eligible A2A → ANP reversal persisted after excluding Agora and separating forced candidate-set changes.</li>
-            <li><strong>120 workflows / 480 additional RPCs.</strong> Serial latency difference: predicted −0.156 ms, observed +0.828 ms; parallel comparisons were order-sensitive.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> A controlled sensitivity diagnostic and separate within-session calibration; no established GAIA task-quality gain or general protocol superiority.</p>
-          <details class="study-details">
-            <summary>Full study description <span class="visually-hidden">— ProtocolBench</span></summary>
-            <div class="detail-body">
-              <p class="meta">Independent Study on ProtocolBench</p>
-              <p>I audited the released ProtocolBench / AgentProtocols GAIA routing path to ask whether workflow communication demand and measured runtime costs can change a fixed local protocol assignment.</p>
-              <p>I profiled A2A, ACP, ANP, and Agora over real local request paths with 1–100 KiB payloads; 480/480 measured requests succeeded. Under controlled communication demand, synthetic local preference margins, and released workflow configuration templates, I found an A2A → ANP assignment reversal in the declared sensitivity objective. The eligible reversal persisted in a no-Agora ablation after separating forced candidate-set changes.</p>
-              <p>In a separate workflow-latency calibration, I measured 120 no-op workflows (an additional 480 RPCs) with serial and fork/join execution. The within-session serial treatment-minus-baseline latency was predicted as −0.156 ms but observed as +0.828 ms; parallel comparisons were sensitive to execution order.</p>
-              <p class="project-note">Assignment sensitivity and workflow calibration are distinct results; neither establishes GAIA task-quality gains or general protocol superiority. The linked public artifact documents the assignment diagnostic.</p>
-            </div>
-          </details>
-          <a aria-label="GitHub: Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment" class="resource-link" href="https://github.com/ZhijingWu/protocolbench-communication-cost-diagnostic" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project" id="project-gtd" aria-labelledby="gtd-title">
-          <header class="project-header">
-            <h3 id="gtd-title">Execution-Semantics Audit of Guided Topology Diffusion</h3>
-            <p class="project-kind">Reproduction / Execution-Semantics Audit</p>
-          </header>
-          <p class="project-question">Do generated communication graphs retain their meaning when constructed and executed by the runtime?</p>
-          <ul class="evidence-list">
-            <li><strong>603 records.</strong> Mean raw-to-executed edge Jaccard increased from 0.152 to 0.863 with a controlled coordinate adapter.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> Improved graph fidelity did not establish downstream task-performance gains.</p>
-          <details class="study-details">
-            <summary>Full study description <span class="visually-hidden">— GTD</span></summary>
-            <div class="detail-body">
-              <p class="meta">Multi-Agent Systems Reproduction Study</p>
-              <p>I reproduced the released GTD pipeline on GSM8K and traced generated communication graphs through diffusion supervision, runtime construction, execution, and final aggregation.</p>
-              <p>Across 603 records, mean raw-to-executed edge Jaccard was 0.152. A controlled canonical-coordinate adapter increased it to 0.863. Downstream task-performance gains were not established.</p>
-            </div>
-          </details>
-          <a aria-label="GitHub: Execution-Semantics Audit of Guided Topology Diffusion" class="resource-link" href="https://github.com/ZhijingWu/diffusion_agent/tree/reproduction" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project" id="project-agenthijack" aria-labelledby="agenthijack-title">
-          <header class="project-header">
-            <h3 id="agenthijack-title">Within-Step Corruption Timing for Computer-Use Agents</h3>
-            <p class="project-kind">Independent Extension / Agent Evaluation</p>
-          </header>
-          <p class="project-question">How does corruption timing within the perception–action cycle affect computer-use agents?</p>
-          <ul class="evidence-list">
-            <li><strong>3 Chrome tasks · 36 primary runs.</strong> Stale-timing mean episode lengths increased by +4.00, +1.75 and +1.00 steps.</li>
-            <li><strong>Profile rename:</strong> 2/4 successes under stale timing versus 4/4 before observation.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> Small, descriptive comparison with uncontrolled sampling seeds; failed/capped episodes are included, and recovery work is not isolated.</p>
-          <details class="study-details">
-            <summary>Full study description <span class="visually-hidden">— AgentHijack</span></summary>
-            <div class="detail-body">
-              <p class="meta">Independent Extension of AgentHijack</p>
-              <p>I studied pre-observation, post-observation/pre-execution, and post-execution corruption timing across 3 Chrome tasks and 36 primary runs.</p>
-              <p>Post-observation/pre-execution corruption increased mean episode length relative to pre-observation on all 3/3 retained tasks: +4.00, +1.75, and +1.00 steps. Profile-rename success was 2/4 under stale timing versus 4/4 under pre-observation corruption.</p>
-              <p class="project-note">A descriptive comparison with a small task set and uncontrolled sampling seeds. Episode-length summaries include failed/capped episodes and do not isolate recovery work or establish explicit specification violations.</p>
-            </div>
-          </details>
-          <a aria-label="GitHub: Within-Step Corruption Timing for Computer-Use Agents" class="resource-link" href="https://github.com/ZhijingWu/AgentHijack/tree/exp/within-step-timing" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project" id="project-expel" aria-labelledby="expel-title">
-          <header class="project-header">
-            <h3 id="expel-title">Trust-Metadata Inheritance in Continually Updated LLM Memory</h3>
-            <p class="project-kind">Independent Follow-up / Memory Audit</p>
-          </header>
-          <p class="project-question">Should edited memory rules inherit the support accumulated for their previous text?</p>
-          <ul class="evidence-list">
-            <li><strong>Rank 2 → 15</strong> when support was reset in a shared-state EDIT replay, with all 36 rule texts preserved.</li>
-            <li><strong>50 paired WebShop tasks:</strong> 0/50 versus 1/50 successes; 96/100 episodes reached the 10-round cap.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> Downstream benefit and equivalence remain unestablished; one replay state and limited trajectory observability restrict interpretation.</p>
-          <details class="study-details">
-            <summary>Full study description <span class="visually-hidden">— ExpeL</span></summary>
-            <div class="detail-body">
-              <p class="meta">Mechanism-Level Audit of ExpeL</p>
-              <p>I audited ExpeL as a follow-up to Memory-Collapse-Eval. In a deterministic shared-state EDIT replay, resetting inherited support moved the edited rule from rank 2 to rank 15 while preserving all 36 rule texts.</p>
-              <p>A controlled 50-task paired WebShop evaluation yielded 0/50 successes with inherited counts versus 1/50 with reset counts. This does not establish a reliable downstream benefit or equivalence between the policies.</p>
-              <p class="project-note">One selected replay state and one rollout per memory/task limit generalization. Of 100 episodes, 96 reached the 10-round cap; trajectory observability also limited interpretation. Support counts are heuristics, not calibrated confidence.</p>
-            </div>
-          </details>
-          <a aria-label="GitHub: Trust-Metadata Inheritance in Continually Updated LLM Memory" class="resource-link" href="https://github.com/ZhijingWu/memory-collapse-trust-metadata-audit" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="project" id="project-cs336" aria-labelledby="cs336-title">
-          <header class="project-header">
-            <h3 id="cs336-title">Language Modeling Systems from Scratch</h3>
-            <p class="project-kind">Independent Coursework</p>
-          </header>
-          <p class="project-question">Building language-model components while studying the systems that train and execute them.</p>
-          <ul class="evidence-list">
-            <li><strong>Independent implementation:</strong> BPE, Transformer modules, optimization and end-to-end training in PyTorch.</li>
-            <li><strong>Systems and post-training study:</strong> efficient attention, scaling, FSDP concepts, SFT and GRPO / GSPO.</li>
-          </ul>
-          <p class="project-limit"><span>Scope.</span> Independent study of publicly available Stanford CS336 materials.</p>
-          <details class="study-details">
-            <summary>Full study description <span class="visually-hidden">— CS336</span></summary>
-            <div class="detail-body">
-              <p class="meta">Stanford CS336, Independent Study</p>
-              <p>I implemented language-model components and training utilities in PyTorch, including BPE tokenization, Transformer modules, optimization, and end-to-end training.</p>
-              <p>I studied efficient attention, scaling, and distributed-training systems, including FSDP concepts, as well as SFT and RL-based post-training (GRPO / GSPO) for tool-using language models.</p>
-              <p class="project-note">Independent study of publicly available course materials.</p>
-            </div>
-          </details>
-          <a aria-label="GitHub: Language Modeling Systems from Scratch" class="resource-link" href="https://github.com/ZhijingWu/CS336-Assignment2-Systems" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
-        </article>
+          </article>
+          <article class="project" id="project-autumnbench" aria-labelledby="autumnbench-title">
+            <header class="project-header">
+              <h4 id="autumnbench-title">Execution and Scoring Semantics in the Public AutumnBench Release</h4>
+              <p class="project-kind">Independent Release Audit / Environment-Level Evaluation</p>
+            </header>
+            <p class="project-question">Does the public Change Detection interface preserve the meaning of a selected historical frame when scoring a submission?</p>
+            <p class="project-method">I audited a pinned public release through native interpreter validation, CPU-only replay and source inspection; scientific execution was limited to one environment, 27VWC, at seed 0.</p>
+            <ul class="evidence-list">
+              <li><strong>117/117 visible MFP frame matches.</strong> Official positive/negative scoring checks returned +1/−1, and a released planning witness reached reward +1.</li>
+              <li><strong>Source-grounded discrepancy:</strong> submission overwrites the historical frame selection before scoring. The final Change Detection numeric reward was not retained.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> A bounded public-release audit, not a complete AutumnBench / WorldTest reproduction. Faithful official reproduction requires author clarification; these findings do not assess the validity of the paper’s published results.</p>
+            <details class="study-details">
+              <summary>Execution record, scoring semantics &amp; limitations <span class="visually-hidden">— AutumnBench</span></summary>
+              <div class="detail-body">
+                <p>The unchanged native interpreter compiled and imported. Masked frame prediction (MFP) replay matched all visible cells in 117/117 released frames and selected the released correct option. These were interpreter/scorer checks, not learned-model predictions.</p>
+                <p>A supplied MFP action trajectory served as a planning witness: the target was reached after 111 executed steps with reward +1. Its input contained 116 actions; no independently discovered or optimal plan is claimed.</p>
+                <p>The saved Change Detection harness selected frame 5 and then submitted, but its success/terminal assertion failed before the numerical return was preserved. The harness also omitted the official initial observation. From saved time 7, static source flow implies that submission grades index 9 instead of the selected 5; this is a source-derived reconstruction, not a recovered reward or a new runtime observation.</p>
+                <p>The inspected release differs from the published selection/scoring definition. This does not establish a bug in the code used for published experiments, invalid published results or a validated scoring repair. No controlled program mutations or learned-world-model evaluations were performed, and the complete multi-family baseline was not established. The intended protocol and an author-confirmed revision remain clarification items.</p>
+              </div>
+            </details>
+            <a class="resource-link" href="assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="AutumnBench Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project" id="project-agenthijack" aria-labelledby="agenthijack-title">
+            <header class="project-header">
+              <h4 id="agenthijack-title">Within-Step Corruption Timing for Computer-Use Agents</h4>
+              <p class="project-kind">Independent Extension / Agent Evaluation</p>
+            </header>
+            <p class="project-question">How does corruption timing within the perception–action cycle affect computer-use agents?</p>
+            <ul class="evidence-list">
+              <li><strong>3 Chrome tasks · 36 primary runs.</strong> Stale-timing mean episode lengths increased by +4.00, +1.75 and +1.00 steps.</li>
+              <li><strong>Profile rename:</strong> 2/4 successes under stale timing versus 4/4 before observation.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> Small, descriptive comparison with uncontrolled sampling seeds; failed/capped episodes are included, and recovery work is not isolated.</p>
+            <details class="study-details">
+              <summary>Full study description <span class="visually-hidden">— AgentHijack</span></summary>
+              <div class="detail-body">
+                <p class="meta">Independent Extension of AgentHijack</p>
+                <p>I studied pre-observation, post-observation/pre-execution, and post-execution corruption timing across 3 Chrome tasks and 36 primary runs.</p>
+                <p>Post-observation/pre-execution corruption increased mean episode length relative to pre-observation on all 3/3 retained tasks: +4.00, +1.75, and +1.00 steps. Profile-rename success was 2/4 under stale timing versus 4/4 under pre-observation corruption.</p>
+                <p class="project-note">A descriptive comparison with a small task set and uncontrolled sampling seeds. Episode-length summaries include failed/capped episodes and do not isolate recovery work or establish explicit specification violations.</p>
+              </div>
+            </details>
+            <a aria-label="GitHub: Within-Step Corruption Timing for Computer-Use Agents" class="resource-link" href="https://github.com/ZhijingWu/AgentHijack/tree/exp/within-step-timing" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </section>
+        <section class="project-group" id="additional-research" aria-labelledby="additional-research-heading">
+          <h3 class="project-group-heading" id="additional-research-heading">Additional Independent Research</h3>
+          <article class="project" id="project-lats" aria-labelledby="lats-title">
+            <header class="project-header">
+              <h4 id="lats-title">Execution-Reliability Diagnostics of Language Agent Tree Search</h4>
+              <p class="project-kind">Independent Research Audit / Language Agents</p>
+            </header>
+            <p class="project-question">Investigated action-output contracts and evaluator-score extraction in a pinned LATS/WebShop implementation using a bounded real-model execution trace, controlled frozen-prompt comparisons, and offline parser verification.</p>
+            <ul class="evidence-list">
+              <li><strong>Action interface:</strong> 35/45 generated actions were invalid in the recorded baseline prefix. A format instruction changed syntax compliance from 0/15 to 15/15 completions; all were <code>think[...]</code>, with no navigation demonstrated.</li>
+              <li><strong>Score interface:</strong> complete final scores changed from 0/6 at 100 tokens to 6/6 at 300 tokens. The native parser agreed with only 3/6; the digit 5 in <code>$50</code> explained all three mismatches.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> One baseline task and selected frozen prompts. No benchmark-wide prevalence estimate, demonstrated task-success improvement, or real mixed-frontier child/value alignment exposure.</p>
+            <details class="study-details">
+              <summary>Study design, B1–B4 evidence &amp; limitations</summary>
+              <div class="detail-body">
+                <dl class="stage-evidence">
+                  <div><dt>B1</dt><dd>In one bounded real-model baseline prefix, 35/45 generated actions were invalid, and 32/32 evaluator outputs lacked complete final scores at the 100-token cap. No successful purchase occurred. A request ceiling interrupted the first rollout before a completed backup.</dd></div>
+                  <div><dt>B2</dt><dd>A command-format instruction changed syntax compliance from 0/15 to 15/15 completions. Each condition used 3 requests with 5 completions per request; the completions are clustered within requests. All 15 compliant outputs were <code>think[...]</code> commands. No navigation or environment episode was demonstrated.</dd></div>
+                  <div><dt>B3</dt><dd>Across three frozen evaluator prompts and two repetitions per prompt/cap, complete final scores changed from 0/6 at 100 tokens to 6/6 at 300 tokens. These were fresh samples, not continuations. The native parser agreed with 3/6 complete scores; all three mismatches came from the digit 5 in <code>$50</code>. No search or environment episode was run in this comparison.</dd></div>
+                  <div><dt>B4</dt><dd>81/81 private CPU checks passed: 64 synthetic cases, 12 recorded-response comparisons and 5 synthesis/boundary checks. The public repository provides only the <strong>64 synthetic parser tests</strong>, not the full private real-response suite. Public raw real-model responses are withheld.</dd></div>
+                </dl>
+                <p>The public synthetic tests demonstrate source-level parser behavior; they do not independently reproduce the original real-model observations. Score-extraction agreement does not validate shopping judgments. Neither a new LATS algorithm nor an evaluated search-performance fix is claimed.</p>
+                <p>This independent audit is not affiliated with or endorsed by the LATS or WebShop authors. Its small selected sample and withheld raw responses limit generalization and public verification.</p>
+              </div>
+            </details>
+            <a class="resource-link" href="https://github.com/ZhijingWu/LATS-Execution-Reliability-Audit" target="_blank" rel="noopener noreferrer">Code &amp; Reproducibility <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project" id="project-expel" aria-labelledby="expel-title">
+            <header class="project-header">
+              <h4 id="expel-title">Trust-Metadata Inheritance in Continually Updated LLM Memory</h4>
+              <p class="project-kind">Independent Follow-up / Memory Audit</p>
+            </header>
+            <p class="project-question">Should edited memory rules inherit the support accumulated for their previous text?</p>
+            <ul class="evidence-list">
+              <li><strong>Rank 2 → 15</strong> when support was reset in a shared-state EDIT replay, with all 36 rule texts preserved.</li>
+              <li><strong>50 paired WebShop tasks:</strong> 0/50 versus 1/50 successes; 96/100 episodes reached the 10-round cap.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> Downstream benefit and equivalence remain unestablished; one replay state and limited trajectory observability restrict interpretation.</p>
+            <details class="study-details">
+              <summary>Full study description <span class="visually-hidden">— ExpeL</span></summary>
+              <div class="detail-body">
+                <p class="meta">Mechanism-Level Audit of ExpeL</p>
+                <p>I audited ExpeL as a follow-up to Memory-Collapse-Eval. In a deterministic shared-state EDIT replay, resetting inherited support moved the edited rule from rank 2 to rank 15 while preserving all 36 rule texts.</p>
+                <p>A controlled 50-task paired WebShop evaluation yielded 0/50 successes with inherited counts versus 1/50 with reset counts. This does not establish a reliable downstream benefit or equivalence between the policies.</p>
+                <p class="project-note">One selected replay state and one rollout per memory/task limit generalization. Of 100 episodes, 96 reached the 10-round cap; trajectory observability also limited interpretation. Support counts are heuristics, not calibrated confidence.</p>
+              </div>
+            </details>
+            <a aria-label="GitHub: Trust-Metadata Inheritance in Continually Updated LLM Memory" class="resource-link" href="https://github.com/ZhijingWu/memory-collapse-trust-metadata-audit" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project" id="project-protocolbench" aria-labelledby="protocolbench-title">
+            <header class="project-header">
+              <h4 id="protocolbench-title">Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment</h4>
+              <p class="project-kind">Diagnostic / Sensitivity Study</p>
+            </header>
+            <p class="project-question">Can measured local communication costs change a fixed protocol assignment—and predict workflow latency?</p>
+            <ul class="evidence-list">
+              <li><strong>480/480 requests succeeded.</strong> An eligible A2A → ANP reversal persisted after excluding Agora and separating forced candidate-set changes.</li>
+              <li><strong>120 workflows / 480 additional RPCs.</strong> Serial latency difference: predicted −0.156 ms, observed +0.828 ms; parallel comparisons were order-sensitive.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> A controlled sensitivity diagnostic and separate within-session calibration; no established GAIA task-quality gain or general protocol superiority.</p>
+            <details class="study-details">
+              <summary>Full study description <span class="visually-hidden">— ProtocolBench</span></summary>
+              <div class="detail-body">
+                <p class="meta">Independent Study on ProtocolBench</p>
+                <p>I audited the released ProtocolBench / AgentProtocols GAIA routing path to ask whether workflow communication demand and measured runtime costs can change a fixed local protocol assignment.</p>
+                <p>I profiled A2A, ACP, ANP, and Agora over real local request paths with 1–100 KiB payloads; 480/480 measured requests succeeded. Under controlled communication demand, synthetic local preference margins, and released workflow configuration templates, I found an A2A → ANP assignment reversal in the declared sensitivity objective. The eligible reversal persisted in a no-Agora ablation after separating forced candidate-set changes.</p>
+                <p>In a separate workflow-latency calibration, I measured 120 no-op workflows (an additional 480 RPCs) with serial and fork/join execution. The within-session serial treatment-minus-baseline latency was predicted as −0.156 ms but observed as +0.828 ms; parallel comparisons were sensitive to execution order.</p>
+                <p class="project-note">Assignment sensitivity and workflow calibration are distinct results; neither establishes GAIA task-quality gains or general protocol superiority. The linked public artifact documents the assignment diagnostic.</p>
+              </div>
+            </details>
+            <a aria-label="GitHub: Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment" class="resource-link" href="https://github.com/ZhijingWu/protocolbench-communication-cost-diagnostic" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </section>
+        <section class="project-group" id="foundations" aria-labelledby="foundations-heading">
+          <h3 class="project-group-heading" id="foundations-heading">Foundations / Coursework</h3>
+          <article class="project" id="project-cs336" aria-labelledby="cs336-title">
+            <header class="project-header">
+              <h4 id="cs336-title">Language Modeling Systems from Scratch</h4>
+              <p class="project-kind">Independent Coursework</p>
+            </header>
+            <p class="project-question">Building language-model components while studying the systems that train and execute them.</p>
+            <ul class="evidence-list">
+              <li><strong>Independent implementation:</strong> BPE, Transformer modules, optimization and end-to-end training in PyTorch.</li>
+              <li><strong>Systems and post-training study:</strong> efficient attention, scaling, FSDP concepts, SFT and GRPO / GSPO.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> Independent study of publicly available Stanford CS336 materials.</p>
+            <details class="study-details">
+              <summary>Full study description <span class="visually-hidden">— CS336</span></summary>
+              <div class="detail-body">
+                <p class="meta">Stanford CS336, Independent Study</p>
+                <p>I implemented language-model components and training utilities in PyTorch, including BPE tokenization, Transformer modules, optimization, and end-to-end training.</p>
+                <p>I studied efficient attention, scaling, and distributed-training systems, including FSDP concepts, as well as SFT and RL-based post-training (GRPO / GSPO) for tool-using language models.</p>
+                <p class="project-note">Independent study of publicly available course materials.</p>
+              </div>
+            </details>
+            <a aria-label="GitHub: Language Modeling Systems from Scratch" class="resource-link" href="https://github.com/ZhijingWu/CS336-Assignment2-Systems" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+        </section>
       </section>
 
       <section class="content-section" id="publications" aria-labelledby="publications-heading">
@@ -268,6 +322,8 @@
       <section class="content-section" id="news" aria-labelledby="news-heading">
         <h2 id="news-heading">News</h2>
         <ol class="timeline">
+          <li><time datetime="2026-10">Oct 2026</time><p>Released the <a href="#project-cardiff">Cardiff sampling and geometry audit</a> evidence repository and two-page technical note.</p></li>
+          <li><time datetime="2026-10">Oct 2026</time><p>Completed a <a href="#project-autumnbench">bounded AutumnBench scoring-semantics audit</a> of the pinned public release.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Released an independent LATS execution-reliability audit covering action contracts, evaluator outputs and score extraction.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Completed a reproducible communication-cost sensitivity diagnostic based on ProtocolBench / AgentProtocols.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Completed an execution-semantics audit of Guided Topology Diffusion on GSM8K.</p></li>
