@@ -6,11 +6,10 @@ from this directory and visit http://127.0.0.1:8771/.
 
 ## Content and hierarchy
 
-The profile centers on how representation, memory, feedback and execution
-interfaces shape language-agent behavior and reliability. Four interest areas
-cover planning and structured reasoning, experience-based memory, multi-agent
-coordination, and execution-grounded evaluation. Graph reasoning and ML systems
-remain supporting foundations.
+The profile connects language-agent planning and structured reasoning with
+generative world models, reliable decision evaluation, multi-agent coordination
+and memory. Independent implementation and controlled evaluation remain the
+focus; the homepage does not present a robotics-only identity.
 
 The page contains About, Research Interests, Selected Projects / Research,
 Publications, Technical Skills, News and Awards. Navigation also links to the
@@ -20,16 +19,17 @@ existing generic CV. No availability line is displayed.
 
 Featured Research:
 
-1. Execution-Semantics Audit of Guided Topology Diffusion.
-2. Sampling Efficiency and Geometric Sensitivity in Cardiff.
-3. Execution and Scoring Semantics in the Public AutumnBench Release.
+1. Action-Conditioned World Model Planning Reliability — EgoWM Audit.
+2. Execution-Semantics Audit of Guided Topology Diffusion.
+3. Sampling Efficiency and Geometric Sensitivity in Cardiff.
 4. Within-Step Corruption Timing for Computer-Use Agents (AgentHijack).
 
 Additional Independent Research:
 
 1. Execution-Reliability Diagnostics of Language Agent Tree Search (LATS).
 2. Trust-Metadata Inheritance in Continually Updated LLM Memory (ExpeL).
-3. Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment (ProtocolBench).
+3. Execution and Scoring Semantics in the Public AutumnBench Release.
+4. Communication-Cost Sensitivity in LLM Multi-Agent Protocol Assignment (ProtocolBench).
 
 Foundations / Coursework:
 
@@ -39,7 +39,31 @@ All original research descriptions, limitations, project anchors and repository
 URLs are retained. Group headings and a small group index replace the flat list;
 each project remains visible with evidence and scope, with native disclosures for
 the full description. No JavaScript is required to access the research content.
-The top navigation and warm 2×2 Research Interests cards are unchanged.
+The top navigation and warm 2×2 Research Interests card composition are retained;
+the four interest topics now reflect the updated research narrative.
+
+## EgoWM evidence and boundaries
+
+Primary evidence: https://github.com/ZhijingWu/EgoWM-Planning-Audit,
+verified against publication commit `b337d1de40fbc84d0323c04e8fd19b7131fa1c8f`.
+The README, RESULTS, archived variance statistics, noise-coupling record and
+prespecified protocol support the following claims:
+
+- Official EgoWM SVD 3-DoF navigation checkpoint loaded successfully.
+- Eight eight-frame rollouts: four frozen actions × seeds 0 and 1, including
+  the initial smoke rollout. LPIPS-Alex ranking changed 1–0–2–3 → 0–2–1–3.
+- Sixteen additional rollouts: Candidates 0/1 × eight fresh seeds (2–9).
+  Total: 24 eight-frame generated rollouts. Noise coupling was verified.
+- R = 0.784736026168 did not meet the prespecified R ≤ 0.75 criterion.
+  The diagnostic bootstrap interval is approximately 0.026–1.585, not a
+  population confidence interval or proof of general variance reduction.
+- No measured navigation success, physical action fidelity, calibrated uncertainty
+  or new planning algorithm. The result is a local open-loop image comparison.
+
+The project uses one GitHub/evidence link. The inspected publication tree has no
+final Technical Note PDF, so no PDF link was added. One October 2026 News entry
+records completion and public release without implying paper acceptance.
+No model runs, inference or research-repository changes were made in this update.
 
 ## Cardiff and AutumnBench
 
@@ -115,7 +139,7 @@ The hosted generic CV at baseline commit `c9a6d7b` matches the repository PDF.
 It includes LATS, GTD, ExpeL, AgentHijack, ProtocolBench and the 2026 mathematics
 award. Its education, accepted BIBM paper and awards are consistent with the
 homepage, and its project summaries preserve the same findings and limitations.
-It does not include Cardiff or AutumnBench; CS336 is also omitted from its
+It does not include EgoWM, Cardiff or AutumnBench; CS336 is also omitted from its
 selected-project list. These are coverage omissions, not conflicting results.
 The applicant will supply a finalized general CV separately. This task preserves
 the PDF bytes and the existing `assets/Zhijing_Wu_CV.pdf` links.
@@ -132,5 +156,6 @@ GTD reports graph fidelity, not established task-performance gains. AgentHijack
 retains failure/cap and sampling limitations. ExpeL retains its unresolved downstream
 finding. CS336 remains independent study of publicly available course materials.
 
-This revision is prepared on `codex/cardiff-autumnbench-update` for local review.
-Publishing requires the user's approval; this task does not commit, push or deploy.
+Homepage source remains a lightweight static site. For the October 2026 EgoWM
+update, the user authorized a normal push to main after content, link, browser
+and diff checks; the generic CV and existing research assets remain unchanged.

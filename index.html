@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zhijing Wu | LLM Agents &amp; Multi-Agent Systems</title>
-  <meta name="description" content="Zhijing Wu is a Computer Science undergraduate at Sichuan University interested in LLM agents, multi-agent systems, agent evaluation, graph-structured reasoning, and ML systems.">
+  <title>Zhijing Wu | Agents, World Models &amp; Reliable Evaluation</title>
+  <meta name="description" content="Zhijing Wu is a Computer Science undergraduate at Sichuan University studying language agents, planning, generative world models, and reliable decision evaluation.">
   <link rel="canonical" href="https://zhijingwu.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Zhijing Wu | LLM Agents &amp; Multi-Agent Systems">
-  <meta property="og:description" content="Zhijing Wu is a Computer Science undergraduate at Sichuan University interested in LLM agents, multi-agent systems, agent evaluation, graph-structured reasoning, and ML systems.">
+  <meta property="og:title" content="Zhijing Wu | Agents, World Models &amp; Reliable Evaluation">
+  <meta property="og:description" content="Zhijing Wu is a Computer Science undergraduate at Sichuan University studying language agents, planning, generative world models, and reliable decision evaluation.">
   <meta property="og:url" content="https://zhijingwu.github.io/">
   <meta property="og:site_name" content="Zhijing Wu">
   <link rel="stylesheet" href="style.css">
@@ -64,8 +64,8 @@
     <main id="main" tabindex="-1">
       <section class="content-section about" id="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About</h2>
-        <p class="about-lead">I am a Computer Science undergraduate at <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a>, interested in how language agents reason and act.</p>
-        <p>I study how representation, memory, feedback and execution interfaces shape agent behavior and reliability. My independent work combines source-code audits and controlled evaluation, supported by graph-structured reasoning and language-model systems preparation.</p>
+        <p class="about-lead">I am a Computer Science undergraduate at <a href="https://www.scu.edu.cn/" target="_blank" rel="noopener noreferrer">Sichuan University</a>, interested in how intelligent agents reason, predict and act.</p>
+        <p>I study how structured reasoning, memory and predictive world models support planning and decision-making. My independent research combines implementation, controlled evaluation and reproducibility analysis across language agents, multi-agent systems and action-conditioned generative models.</p>
       </section>
 
       <section class="content-section" id="research" aria-labelledby="research-heading">
@@ -74,22 +74,22 @@
           <article class="research-card">
             <span class="category">Planning</span>
             <h3>LLM Agent Planning &amp; Structured Reasoning</h3>
-            <p>How agents represent state and turn reasoning into executable actions.</p>
+            <p>How structured representations and reasoning support planning and decisions in language agents.</p>
           </article>
           <article class="research-card">
-            <span class="category">Memory</span>
-            <h3>Agent Memory &amp; Experience-Based Learning</h3>
-            <p>How stored experience, support metadata and updates influence agent behavior.</p>
-          </article>
-          <article class="research-card">
-            <span class="category">Coordination</span>
-            <h3>Multi-Agent Coordination &amp; Communication</h3>
-            <p>How communication structure and protocol choices interact with execution cost.</p>
+            <span class="category">World Models</span>
+            <h3>Generative World Models</h3>
+            <p>How action-conditioned predictions support planning, and how stochastic generation affects candidate evaluation.</p>
           </article>
           <article class="research-card">
             <span class="category">Evaluation</span>
-            <h3>Execution-Grounded Evaluation &amp; Reliability</h3>
-            <p>How action contracts, feedback and measurement affect conclusions about agents.</p>
+            <h3>Reliable Decision Evaluation</h3>
+            <p>How execution semantics, feedback and measurement affect conclusions about agent decisions.</p>
+          </article>
+          <article class="research-card">
+            <span class="category">Coordination &amp; Memory</span>
+            <h3>Multi-Agent Systems &amp; Memory</h3>
+            <p>How communication structure and stored experience shape coordination and agent behavior.</p>
           </article>
         </div>
       </section>
@@ -104,6 +104,29 @@
         </nav>
         <section class="project-group" id="featured-research" aria-labelledby="featured-research-heading">
           <h3 class="project-group-heading" id="featured-research-heading">Featured Research</h3>
+          <article class="project" id="project-egowm" aria-labelledby="egowm-title">
+            <header class="project-header">
+              <h4 id="egowm-title">Action-Conditioned World Model Planning Reliability — EgoWM Audit</h4>
+              <p class="project-kind">Independent Audit / World Models &amp; Planning Evaluation</p>
+            </header>
+            <p class="project-question">How sensitive are action-candidate rankings to diffusion randomness, and does coupling that randomness stabilize their score differences?</p>
+            <p class="project-method">I loaded the official EgoWM SVD 3-DoF navigation checkpoint and generated 24 eight-frame GPU rollouts: eight across four frozen actions and two seeds, followed by sixteen for a paired-sampling study.</p>
+            <ul class="evidence-list">
+              <li><strong>Two-seed ranking change:</strong> final-frame LPIPS-Alex order changed from 1–0–2–3 to 0–2–1–3, with smaller image distance ranked first.</li>
+              <li><strong>Verified noise coupling, unmet variance target:</strong> common-random-number (CRN) variance ratio R ≈ 0.785 exceeded the prespecified R ≤ 0.75 ceiling; the diagnostic bootstrap interval was approximately 0.026–1.585.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> A local open-loop image comparison on one scene. No measured navigation success, physical action fidelity or new planning algorithm; the target variance reduction was not demonstrated.</p>
+            <details class="study-details">
+              <summary>Protocol, evidence &amp; limitations <span class="visually-hidden">— EgoWM</span></summary>
+              <div class="detail-body">
+                <p>The official navigation checkpoint loaded successfully. Four fixed action sequences shared one initial image, one goal and an eight-frame horizon. Candidate 0 was the recorded sequence; Candidates 1–3 used local action perturbations. Seeds 0 and 1 produced eight rollouts in total, including the initial smoke rollout. The ranking reversal is an external LPIPS-Alex comparison, not evidence of model failure or a better plan.</p>
+                <p>The follow-up used Candidates 0 and 1 only with eight fresh seeds, 2–9, producing sixteen more rollouts. A same-seed probe verified the two pipeline noise draws, and both candidates ended with matching generator states for every paired seed. The scheduler added no step noise in this configuration.</p>
+                <p>Using sample variances with divisor n − 1, R = Var(L1 − L0) / [Var(L0) + Var(L1)] = 0.784736026168. The prespecified R ≤ 0.75 criterion was not met. A paired bootstrap of the eight seeds (10,000 resamples) gave a diagnostic interval of approximately 0.026–1.585, which includes 1; this is not a population confidence interval.</p>
+                <p>The result is limited to one context and locally perturbed actions. LPIPS distance does not measure physical action fidelity, calibrated uncertainty or navigation success. No successful variance-reduction method or new planner is claimed. The public repository provides the execution record, stored scores, coupling checks and reproduction instructions.</p>
+              </div>
+            </details>
+            <a class="resource-link" href="https://github.com/ZhijingWu/EgoWM-Planning-Audit" target="_blank" rel="noopener noreferrer" aria-label="GitHub: EgoWM Planning Audit">GitHub &amp; Evidence <span aria-hidden="true">↗</span></a>
+          </article>
           <article class="project" id="project-gtd" aria-labelledby="gtd-title">
             <header class="project-header">
               <h4 id="gtd-title">Execution-Semantics Audit of Guided Topology Diffusion</h4>
@@ -149,29 +172,6 @@
               <a class="resource-link" href="https://github.com/ZhijingWu/cardiff-sampling-geometry-audit" target="_blank" rel="noopener noreferrer" aria-label="GitHub: Cardiff sampling and geometry audit">GitHub <span aria-hidden="true">↗</span></a>
               <a class="resource-link" href="https://raw.githubusercontent.com/ZhijingWu/cardiff-sampling-geometry-audit/main/Zhijing_Wu_Cardiff_Technical_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="Cardiff Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
             </div>
-          </article>
-          <article class="project" id="project-autumnbench" aria-labelledby="autumnbench-title">
-            <header class="project-header">
-              <h4 id="autumnbench-title">Execution and Scoring Semantics in the Public AutumnBench Release</h4>
-              <p class="project-kind">Independent Release Audit / Environment-Level Evaluation</p>
-            </header>
-            <p class="project-question">Does the public Change Detection interface preserve the meaning of a selected historical frame when scoring a submission?</p>
-            <p class="project-method">I audited a pinned public release through native interpreter validation, CPU-only replay and source inspection; scientific execution was limited to one environment, 27VWC, at seed 0.</p>
-            <ul class="evidence-list">
-              <li><strong>117/117 visible MFP frame matches.</strong> Official positive/negative scoring checks returned +1/−1, and a released planning witness reached reward +1.</li>
-              <li><strong>Source-grounded discrepancy:</strong> submission overwrites the historical frame selection before scoring. The final Change Detection numeric reward was not retained.</li>
-            </ul>
-            <p class="project-limit"><span>Scope.</span> A bounded public-release audit, not a complete AutumnBench / WorldTest reproduction. Faithful official reproduction requires author clarification; these findings do not assess the validity of the paper’s published results.</p>
-            <details class="study-details">
-              <summary>Execution record, scoring semantics &amp; limitations <span class="visually-hidden">— AutumnBench</span></summary>
-              <div class="detail-body">
-                <p>The unchanged native interpreter compiled and imported. Masked frame prediction (MFP) replay matched all visible cells in 117/117 released frames and selected the released correct option. These were interpreter/scorer checks, not learned-model predictions.</p>
-                <p>A supplied MFP action trajectory served as a planning witness: the target was reached after 111 executed steps with reward +1. Its input contained 116 actions; no independently discovered or optimal plan is claimed.</p>
-                <p>The saved Change Detection harness selected frame 5 and then submitted, but its success/terminal assertion failed before the numerical return was preserved. The harness also omitted the official initial observation. From saved time 7, static source flow implies that submission grades index 9 instead of the selected 5; this is a source-derived reconstruction, not a recovered reward or a new runtime observation.</p>
-                <p>The inspected release differs from the published selection/scoring definition. This does not establish a bug in the code used for published experiments, invalid published results or a validated scoring repair. No controlled program mutations or learned-world-model evaluations were performed, and the complete multi-family baseline was not established. The intended protocol and an author-confirmed revision remain clarification items.</p>
-              </div>
-            </details>
-            <a class="resource-link" href="assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="AutumnBench Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
           </article>
           <article class="project" id="project-agenthijack" aria-labelledby="agenthijack-title">
             <header class="project-header">
@@ -245,6 +245,29 @@
               </div>
             </details>
             <a aria-label="GitHub: Trust-Metadata Inheritance in Continually Updated LLM Memory" class="resource-link" href="https://github.com/ZhijingWu/memory-collapse-trust-metadata-audit" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project" id="project-autumnbench" aria-labelledby="autumnbench-title">
+            <header class="project-header">
+              <h4 id="autumnbench-title">Execution and Scoring Semantics in the Public AutumnBench Release</h4>
+              <p class="project-kind">Independent Release Audit / Environment-Level Evaluation</p>
+            </header>
+            <p class="project-question">Does the public Change Detection interface preserve the meaning of a selected historical frame when scoring a submission?</p>
+            <p class="project-method">I audited a pinned public release through native interpreter validation, CPU-only replay and source inspection; scientific execution was limited to one environment, 27VWC, at seed 0.</p>
+            <ul class="evidence-list">
+              <li><strong>117/117 visible MFP frame matches.</strong> Official positive/negative scoring checks returned +1/−1, and a released planning witness reached reward +1.</li>
+              <li><strong>Source-grounded discrepancy:</strong> submission overwrites the historical frame selection before scoring. The final Change Detection numeric reward was not retained.</li>
+            </ul>
+            <p class="project-limit"><span>Scope.</span> A bounded public-release audit, not a complete AutumnBench / WorldTest reproduction. Faithful official reproduction requires author clarification; these findings do not assess the validity of the paper’s published results.</p>
+            <details class="study-details">
+              <summary>Execution record, scoring semantics &amp; limitations <span class="visually-hidden">— AutumnBench</span></summary>
+              <div class="detail-body">
+                <p>The unchanged native interpreter compiled and imported. Masked frame prediction (MFP) replay matched all visible cells in 117/117 released frames and selected the released correct option. These were interpreter/scorer checks, not learned-model predictions.</p>
+                <p>A supplied MFP action trajectory served as a planning witness: the target was reached after 111 executed steps with reward +1. Its input contained 116 actions; no independently discovered or optimal plan is claimed.</p>
+                <p>The saved Change Detection harness selected frame 5 and then submitted, but its success/terminal assertion failed before the numerical return was preserved. The harness also omitted the official initial observation. From saved time 7, static source flow implies that submission grades index 9 instead of the selected 5; this is a source-derived reconstruction, not a recovered reward or a new runtime observation.</p>
+                <p>The inspected release differs from the published selection/scoring definition. This does not establish a bug in the code used for published experiments, invalid published results or a validated scoring repair. No controlled program mutations or learned-world-model evaluations were performed, and the complete multi-family baseline was not established. The intended protocol and an author-confirmed revision remain clarification items.</p>
+              </div>
+            </details>
+            <a class="resource-link" href="assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="AutumnBench Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
           </article>
           <article class="project" id="project-protocolbench" aria-labelledby="protocolbench-title">
             <header class="project-header">
@@ -322,6 +345,7 @@
       <section class="content-section" id="news" aria-labelledby="news-heading">
         <h2 id="news-heading">News</h2>
         <ol class="timeline">
+          <li><time datetime="2026-10">Oct 2026</time><p>Completed and released an independent <a href="https://github.com/ZhijingWu/EgoWM-Planning-Audit" target="_blank" rel="noopener noreferrer">EgoWM planning-evaluation audit</a>, including a two-seed action-ranking comparison and a controlled paired-sampling variance study.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Released the <a href="#project-cardiff">Cardiff sampling and geometry audit</a> evidence repository and two-page technical note.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Completed a <a href="#project-autumnbench">bounded AutumnBench scoring-semantics audit</a> of the pinned public release.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Released an independent LATS execution-reliability audit covering action contracts, evaluator outputs and score extraction.</p></li>
