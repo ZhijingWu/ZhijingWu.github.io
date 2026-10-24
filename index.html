@@ -97,6 +97,7 @@
       <section class="content-section" id="projects" aria-labelledby="projects-heading">
         <h2 id="projects-heading">Selected Projects / Research</h2>
         <p class="section-intro">Independent audits and controlled studies, organized by research focus and coursework. Expand each entry for its full scientific description.</p>
+        <p class="section-intro">New public artifacts: <a href="https://github.com/ZhijingWu/cpc-memory-mechanism-diagnostic" target="_blank" rel="noopener noreferrer">CPC memory mechanism discrimination</a> (ten archived worlds), <a href="https://github.com/ZhijingWu/dynamic-web-agent-reliability" target="_blank" rel="noopener noreferrer">dynamic web-agent reliability</a> (114 branches on one UI state machine), <a href="https://github.com/ZhijingWu/recipient-communication-diagnostics" target="_blank" rel="noopener noreferrer">recipient-specific communication</a>, and <a href="https://github.com/ZhijingWu/tabpfn-coordinate-sensitivity" target="_blank" rel="noopener noreferrer">TabPFN coordinate sensitivity</a>. Each includes executed evidence, offline analysis and explicit limitations.</p>
         <nav class="project-index" aria-label="Research groups">
           <a href="#featured-research">Featured Research</a>
           <a href="#additional-research">Additional Research</a>
@@ -251,23 +252,25 @@
               <h4 id="autumnbench-title">Execution and Scoring Semantics in the Public AutumnBench Release</h4>
               <p class="project-kind">Independent Release Audit / Environment-Level Evaluation</p>
             </header>
-            <p class="project-question">Does the public Change Detection interface preserve the meaning of a selected historical frame when scoring a submission?</p>
-            <p class="project-method">I audited a pinned public release through native interpreter validation, CPU-only replay and source inspection; scientific execution was limited to one environment, 27VWC, at seed 0.</p>
+            <p class="project-question">Does submission preserve the selected historical answer, or can UI bookkeeping change its score?</p>
+            <p class="project-method">I executed the pinned public Change Detection path in two released environments: 136 factorial scenarios, three path controls and eight paired original/changed replays, with 21,513 metered native calls.</p>
             <ul class="evidence-list">
-              <li><strong>117/117 visible MFP frame matches.</strong> Official positive/negative scoring checks returned +1/−1, and a released planning witness reached reward +1.</li>
-              <li><strong>Source-grounded discrepancy:</strong> submission overwrites the historical frame selection before scoring. The final Change Detection numeric reward was not retained.</li>
+              <li><strong>Answer sensitivity:</strong> all 32 fixed-cost groups of four selected answers receive identical official scores; an index-only copied-object counterfactual changes 128/128 explicit-selection scores.</li>
+              <li><strong>Browsing sensitivity:</strong> extra selection-only actions lower live scores in all 48 grouped comparisons, with the native history fixed.</li>
             </ul>
-            <p class="project-limit"><span>Scope.</span> A bounded public-release audit, not a complete AutumnBench / WorldTest reproduction. Faithful official reproduction requires author clarification; these findings do not assess the validity of the paper’s published results.</p>
+            <p class="project-limit"><span>Scope.</span> Two deterministic public tasks, including an exploratory support-aware extension. Repeated seeds are not independent environments. No learned-agent ranking, general scorer repair or invalid published-paper result is established.</p>
             <details class="study-details">
-              <summary>Execution record, scoring semantics &amp; limitations <span class="visually-hidden">— AutumnBench</span></summary>
+              <summary>Execution record, target assumptions &amp; limitations <span class="visually-hidden">— AutumnBench</span></summary>
               <div class="detail-body">
-                <p>The unchanged native interpreter compiled and imported. Masked frame prediction (MFP) replay matched all visible cells in 117/117 released frames and selected the released correct option. These were interpreter/scorer checks, not learned-model predictions.</p>
-                <p>A supplied MFP action trajectory served as a planning witness: the target was reached after 111 executed steps with reward +1. Its input contained 116 actions; no independently discovered or optimal plan is claimed.</p>
-                <p>The saved Change Detection harness selected frame 5 and then submitted, but its success/terminal assertion failed before the numerical return was preserved. The harness also omitted the official initial observation. From saved time 7, static source flow implies that submission grades index 9 instead of the selected 5; this is a source-derived reconstruction, not a recovered reward or a new runtime observation.</p>
-                <p>The inspected release differs from the published selection/scoring definition. This does not establish a bug in the code used for published experiments, invalid published results or a validated scoring repair. No controlled program mutations or learned-world-model evaluations were performed, and the complete multi-family baseline was not established. The intended protocol and an author-confirmed revision remain clarification items.</p>
+                <p>The public submission path replaces the selected historical index with an action-counter-derived value. All 136 scenarios follow that rule. Official runtime returns, an independent copied-index counterfactual and an observed-divergence target metric are retained separately. The latter target interpretation depends on the stated deterministic-original assumption.</p>
+                <p>The primary and conditional second-environment work was preregistered; the additional 32 support-aware scenarios were frozen after the first 104 were observed. These are executed scripted controls, not trained-model predictions or an independent population evaluation.</p>
+                <p>The earlier CPU MFP replay remains a separate historical result: 117/117 visible frame matches and a released planning witness reaching reward +1. Its old unretained Change Detection reward was not recovered. The continuation records fresh numeric returns and preserves all earlier evidence. The code used for the paper’s published results and the intended answer/target contract still require author clarification.</p>
               </div>
             </details>
-            <a class="resource-link" href="assets/Zhijing_Wu_AutumnBench_Scoring_Audit_Note.pdf" target="_blank" rel="noopener noreferrer" aria-label="AutumnBench Technical Note, PDF, 2 pages">Technical Note (PDF, 2 pages) <span aria-hidden="true">↗</span></a>
+            <div class="project-resources">
+              <a class="resource-link" href="https://github.com/ZhijingWu/autumnbench-scoring-semantics-audit" target="_blank" rel="noopener noreferrer">Code &amp; Executed Evidence <span aria-hidden="true">↗</span></a>
+              <a class="resource-link" href="assets/Zhijing_Wu_AutumnBench_Execution_Audit_20261024.pdf" target="_blank" rel="noopener noreferrer">Technical Note (PDF, 6 pages) <span aria-hidden="true">↗</span></a>
+            </div>
           </article>
           <article class="project" id="project-protocolbench" aria-labelledby="protocolbench-title">
             <header class="project-header">
@@ -347,7 +350,7 @@
         <ol class="timeline">
           <li><time datetime="2026-10">Oct 2026</time><p>Completed and released an independent <a href="https://github.com/ZhijingWu/EgoWM-Planning-Audit" target="_blank" rel="noopener noreferrer">EgoWM planning-evaluation audit</a>, including a two-seed action-ranking comparison and a controlled paired-sampling variance study.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Released the <a href="#project-cardiff">Cardiff sampling and geometry audit</a> evidence repository and two-page technical note.</p></li>
-          <li><time datetime="2026-10">Oct 2026</time><p>Completed a <a href="#project-autumnbench">bounded AutumnBench scoring-semantics audit</a> of the pinned public release.</p></li>
+          <li><time datetime="2026-10">Oct 2026</time><p>Released a <a href="#project-autumnbench">two-environment AutumnBench execution/scoring audit</a> with 136 recorded scenarios and portable offline analysis.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Released an independent LATS execution-reliability audit covering action contracts, evaluator outputs and score extraction.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Completed a reproducible communication-cost sensitivity diagnostic based on ProtocolBench / AgentProtocols.</p></li>
           <li><time datetime="2026-10">Oct 2026</time><p>Completed an execution-semantics audit of Guided Topology Diffusion on GSM8K.</p></li>
