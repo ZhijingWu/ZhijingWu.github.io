@@ -17,7 +17,7 @@ understated cards; six selected projects use brief descriptions and direct
 links to full methods, results and limitations.
 
 Section order: About Me, Research Interests, Selected Projects / Research,
-Publications, Education & Academic Background (including awards and coursework),
+Publications, Education & Academic Background (including awards),
 News, Contact. Technical skills remain available in a native disclosure.
 
 Featured projects, in order:
@@ -45,8 +45,8 @@ Cardiff, LATS, ExpeL, ProtocolBench and the former full AutumnBench project entr
 are removed from the homepage's featured listing. Their repositories and hosted
 assets are not deleted. AutumnBench's latest public release remains in News.
 The former inline list of recipient-communication and TabPFN artifacts is replaced
-by a GitHub-profile link. CS336 remains under Education as completed independent
-study of public materials; it does not imply Stanford enrollment.
+by a GitHub-profile link. The final refinement removes the CS336 coursework block
+and its Code link from Education; its repositories and the existing CV are unchanged.
 
 ## Evidence checked for the redesign
 
@@ -73,7 +73,8 @@ three curated News entries.
 Email: `zhijingwu.cs@gmail.com`.
 LinkedIn: https://www.linkedin.com/in/zhijing-wu-scu/ (user-confirmed final URL).
 Both the profile and Contact use Email, GitHub, LinkedIn, CV in that order, with
-small inline SVG icons. External links open in a new tab with
+22px sidebar icons, 44px touch targets, accessible names and native tooltips.
+Contact retains compact labeled links. External links open in a new tab with
 `rel="noopener noreferrer"`. No social embeds, widgets or trackers.
 
 LinkedIn returned HTTP 999 during automated verification (after normalizing the
@@ -100,3 +101,14 @@ Screenshots and verification reports are stored outside the repository.
 Baseline: `c86ae17496c325acd853b5a355febb858c8a34f4`, retained locally on
 `backup/pre-redesign-live-20261025`. The user authorized the redesign and a normal
 push to `main` after visual, factual and functional checks.
+
+## Final visual refinement — 25 October 2026
+
+About uses the user's approved two-paragraph replacement verbatim (with the
+existing university link retained). Project selection, order and descriptions,
+publication, education figures, awards and technical skills are unchanged.
+The visible footer is removed; Contact ends with the existing section padding.
+Both project-note labels are “Research Note”; their PDF destinations are unchanged.
+The deployed favicon already matches the cool palette, so its SVG bytes are
+preserved. The icon reference is versioned (`?v=20261025-2`) to refresh browser
+caches. The title is unchanged; theme-color is aligned with the page background.
