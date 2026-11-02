@@ -124,6 +124,18 @@
             <div class="project-links"><a href="https://github.com/ZhijingWu/diffusion_agent/tree/reproduction" target="_blank" rel="noopener noreferrer" aria-label="GitHub: GTD Execution-Semantics Audit">GitHub <span aria-hidden="true">↗</span></a>
               <a href="https://github.com/ZhijingWu/diffusion_agent/blob/reproduction/docs/GTD_Reproduction_Technical_Note_Zhijing_Wu.pdf" target="_blank" rel="noopener noreferrer" aria-label="Research Note for GTD Execution-Semantics Audit, PDF">Research Note</a></div>
           </article>
+          <article class="project" id="project-expel" aria-labelledby="expel-title">
+            <h3 id="expel-title">ExpeL Memory: Support-Inheritance Audit</h3>
+            <p class="project-tags">Independent extension · Agent Memory · Evaluation</p>
+            <p class="project-description">Audited whether inherited support can change solver-visible rule ranking without changing rule text. In one identical 36-rule state, resetting edited-rule support moved its rank from 2 to 15. Six independent compression builds provided a stochasticity control (15 dependent lexical comparisons). Across 50 paired WebShop tasks (100 episodes), successes were 0/50 with inherited support versus 1/50 after reset (exact paired p = 1.0); 96/100 episodes reached the cap. No reliable downstream benefit or equivalence was established.</p>
+            <div class="project-links"><a href="https://github.com/ZhijingWu/memory-collapse-trust-metadata-audit" target="_blank" rel="noopener noreferrer" aria-label="GitHub: ExpeL Memory Support-Inheritance Audit">GitHub <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project" id="project-wctr" aria-labelledby="wctr-title">
+            <h3 id="wctr-title">World-Model Planning: Branch Isolation</h3>
+            <p class="project-tags">Independent research · World Models · Planning</p>
+            <p class="project-description">Investigated whether executable world-model rollouts preserve parent state while returning the same values as full-copy execution. Implemented WCTR, a restricted Python runtime combining mutation witnesses, alias-aware selective copying and transactional rollback. It recorded zero parent/output contract failures across 33,692 checked transitions under the supported operations. Controlled results were mixed, and native completion tied across four isolation methods. These checks establish neither a general-purpose world-model learning algorithm nor improved downstream planning performance.</p>
+            <div class="project-links"><a href="https://github.com/ZhijingWu/world-model-planning-reliability" target="_blank" rel="noopener noreferrer" aria-label="GitHub: World-Model Planning Branch Isolation">GitHub <span aria-hidden="true">↗</span></a></div>
+          </article>
         </div>
         <p class="more-work"><a href="https://github.com/ZhijingWu" target="_blank" rel="noopener noreferrer">More research &amp; code on GitHub <span aria-hidden="true">↗</span></a></p>
       </section>
