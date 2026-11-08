@@ -71,7 +71,7 @@ three curated News entries.
 ## Contact and CV
 
 Email: `zhijingwu.cs@gmail.com`.
-LinkedIn: https://www.linkedin.com/in/zhijing-wu-scu/ (user-confirmed final URL).
+LinkedIn: https://www.linkedin.com/in/zhijingwu-cs/ (user-confirmed final URL).
 Both the profile and Contact use Email, GitHub, LinkedIn, CV in that order, with
 22px sidebar icons, 44px touch targets, accessible names and native tooltips.
 Contact retains compact labeled links. External links open in a new tab with
